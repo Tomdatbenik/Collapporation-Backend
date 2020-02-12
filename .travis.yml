@@ -1,0 +1,25 @@
+language: java
+
+jdk:
+ - oraclejdk11
+
+env:
+ - MAVEN_VERSION=3.3.9
+
+services:
+ - docker
+
+addons:
+ sonarcloud:
+  organization: "tomdatbenik" # the key of the org you chose at step #
+  
+install:
+ - "mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
+
+script:
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=animechat-rest
+ - docker build -t docker.io/$DOCKER_NAME/animechat-rest:latest .
+
+after_success:
+    - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+    - docker push docker.io/$DOCKER_NAME/animechat-rest:latest
