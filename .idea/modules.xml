@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/token/tokenservice.iml" filepath="$PROJECT_DIR$/token/tokenservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/token/TokenService.iml" filepath="$PROJECT_DIR$/token/TokenService.iml" />
     </modules>
   </component>
 </project>

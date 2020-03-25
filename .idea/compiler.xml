@@ -6,15 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tokenservice" />
+        <module name="TokenService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="tokenservice" target="11" />
+      <module name="TokenService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TokenService" options="-parameters" />
       <module name="tokenservice" options="-parameters" />
     </option>
   </component>
