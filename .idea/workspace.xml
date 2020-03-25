@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="558aefc2-0825-4030-8377-cb9bfb8d883d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/token/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/TokenServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/src/test/java/com/collapperation/tokenservice/TokenServiceApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZcHBr5KZz6TrZCw7UfHEpNjGZK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/token" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="558aefc2-0825-4030-8377-cb9bfb8d883d" name="Default Changelist" comment="" />
+      <created>1585131329268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585131329268</updated>
+      <workItem from="1585131335604" duration="324000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="513" y="259" key="#Project_Structure" timestamp="1585131340355">
+      <screen x="0" y="0" width="1842" height="1200" />
+    </state>
+    <state x="513" y="259" key="#Project_Structure/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1585131340355" />
+    <state x="700" y="349" key="FileChooserDialogImpl" timestamp="1585131650415">
+      <screen x="0" y="0" width="1842" height="1200" />
+    </state>
+    <state x="700" y="349" key="FileChooserDialogImpl/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1585131650415" />
+    <state x="586" y="299" key="NewModule_or_Project.wizard" timestamp="1585131654160">
+      <screen x="0" y="0" width="1842" height="1200" />
+    </state>
+    <state x="586" y="299" key="NewModule_or_Project.wizard/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1585131654160" />
+    <state x="401" y="175" key="SettingsEditor" timestamp="1585131659014">
+      <screen x="0" y="0" width="1842" height="1200" />
+    </state>
+    <state x="401" y="175" key="SettingsEditor/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1585131659014" />
+    <state x="303" y="325" width="1235" height="564" key="new project wizard" timestamp="1585131573754">
+      <screen x="0" y="0" width="1842" height="1200" />
+    </state>
+    <state x="303" y="325" width="1235" height="564" key="new project wizard/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1585131573754" />
+  </component>
+</project>
