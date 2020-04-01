@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active:
   application:
     name: gateway
 
@@ -16,11 +14,3 @@ eureka:
     instance:
       preferIpAddress: true
 
----
-
-
-
-spring:
-  profiles: prod
-logging:
-  config: Gateway\\src\\main\\resources\\Log4J2\\Log4j2.xml
