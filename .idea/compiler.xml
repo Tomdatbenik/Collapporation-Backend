@@ -15,7 +15,7 @@
       <module name="Eureka" target="11" />
       <module name="Gateway" target="11" />
       <module name="tokenservice" target="11" />
-      <module name="TokenService" target="1.8" />
+      <module name="TokenService" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

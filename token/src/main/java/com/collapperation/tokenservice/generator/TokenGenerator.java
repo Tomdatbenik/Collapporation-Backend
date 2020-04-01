@@ -1,12 +1,12 @@
 package com.collapperation.tokenservice.generator;
 
-import io.jsonwebtoken.JwtBuilder;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.security.Key;
 import java.util.Date;
+import java.util.UUID;
 
 @Component
 public class TokenGenerator {
@@ -15,24 +15,17 @@ public class TokenGenerator {
     @Value("${collapperation.token.lifespan}")
     private int minutes;
 
-
-
-    private final JwtBuilder jwtBuilder;
-    private final Key key;
-
-    public TokenGenerator(                         final JwtBuilder jwtBuilder,
-                          @Qualifier("privateKey") final Key key){
-        this.jwtBuilder = jwtBuilder;
-        this.key = key;
+    private final Algorithm algorithm;
+    public TokenGenerator(Algorithm algorithm){
+        this.algorithm = algorithm;
     }
 
     public String newToken(){
-        return jwtBuilder
-                .setIssuer(issuer)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + (1000 * 60 * minutes)))
-
-                .signWith(key)
-                .compact();
+        return JWT.create()
+                .withIssuer(issuer)
+                .withJWTId(UUID.randomUUID().toString())
+                .withIssuedAt(new Date(System.currentTimeMillis()))
+                .withExpiresAt(new Date(System.currentTimeMillis() + (1000 * 60 * minutes)))
+                .sign(algorithm);
     }
 }
