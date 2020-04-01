@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Eureka" />
         <module name="TokenService" />
+        <module name="Gateway" />
+        <module name="Eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Eureka" target="11" />
+      <module name="Gateway" target="11" />
       <module name="tokenservice" target="11" />
       <module name="TokenService" target="1.8" />
     </bytecodeTargetLevel>
@@ -19,6 +21,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Eureka" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
       <module name="TokenService" options="-parameters" />
       <module name="tokenservice" options="-parameters" />
     </option>
