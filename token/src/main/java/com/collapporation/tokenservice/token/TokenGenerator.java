@@ -11,9 +11,9 @@ import java.util.UUID;
 
 @Component
 public class TokenGenerator implements TokenBuilder {
-    @Value("${collapperation.token.issuer}")
+    @Value("${collapporation.token.issuer}")
     private String issuer;
-    @Value("${collapperation.token.lifespan}")
+    @Value("${collapporation.token.lifespan}")
     private int minutes;
 
     private final Algorithm algorithm;
