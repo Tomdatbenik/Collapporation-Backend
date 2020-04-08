@@ -39,9 +39,9 @@ public class TokenController {
     }
 
     @GetMapping("/refresh")
-    public ResponseEntity<String> refreshToken(@RequestHeader("collapperationToken") String token) {
+    public ResponseEntity<String> refreshToken(@RequestHeader("collapporationToken") String token) {
         try {
-            logger.info("verifying collapperation token");
+            logger.info("verifying collapporation token");
             final DecodedJWT decodedJWT = tokenValidator.verify(token);
             logger.info("generating token");
             return new ResponseEntity<>(tokenBuilder.getNewToken(

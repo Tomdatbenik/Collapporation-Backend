@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="558aefc2-0825-4030-8377-cb9bfb8d883d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/collaperation/eureka/DiscoveryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/collapporation/eureka/DiscoveryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/test/java/com/collaperation/eureka/DiscoveryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/test/java/com/collapporation/eureka/DiscoveryServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/com/collapperation/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/java/com/collapporation/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/test/java/com/collapperation/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/test/java/com/collapporation/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/TokenServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/TokenServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/config/FireBaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/config/FireBaseConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/config/TokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/config/TokenConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/controller/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/controller/TokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/token/TokenBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/token/TokenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/token/TokenValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/token/TokenVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/utils/PemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/utils/PemUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/test/java/com/collapperation/tokenservice/TokenserviceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/test/java/com/collapporation/tokenservice/TokenserviceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/controller/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapporation/tokenservice/controller/TokenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +189,7 @@
       <workItem from="1585133009649" duration="5915000" />
       <workItem from="1585509141388" duration="80000" />
       <workItem from="1585727058795" duration="10095000" />
-      <workItem from="1586330937133" duration="8627000" />
+      <workItem from="1586330937133" duration="8863000" />
     </task>
     <servers />
   </component>
