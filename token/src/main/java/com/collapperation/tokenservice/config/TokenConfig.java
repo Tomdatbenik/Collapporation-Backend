@@ -25,7 +25,7 @@ public class TokenConfig {
         return Algorithm.RSA512(null, (RSAPrivateKey) readPrivateKeyFromFile(filepath, "RSA"));
     }
 
-    @Value("${collaperation.token.publicKey}")
+    @Value("${collapperation.token.publicKey}")
     private String publicKey;
 
     @Bean("publicAlgorithm")
@@ -33,7 +33,7 @@ public class TokenConfig {
         return Algorithm.RSA512((RSAPublicKey) readPublicKeyFromFile(publicKey, "RSA"), null);
     }
 
-    @Value("${collapperation.token.signer}")
+    @Value("${collapperation.token.issuer}")
     private String signer;
 
     @Bean
