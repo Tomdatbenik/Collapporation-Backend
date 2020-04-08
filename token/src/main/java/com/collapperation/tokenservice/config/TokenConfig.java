@@ -1,5 +1,4 @@
-package com.collapperation.tokenservice;
-
+package com.collapperation.tokenservice.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -17,8 +16,7 @@ import static com.collapperation.tokenservice.utils.PemUtils.readPrivateKeyFromF
 import static com.collapperation.tokenservice.utils.PemUtils.readPublicKeyFromFile;
 
 @Configuration
-public class Factory {
-
+public class TokenConfig {
     @Value("${collapperation.token.privatekey}")
     private String filepath;
 
@@ -42,5 +40,4 @@ public class Factory {
     public JWTVerifier jwtVerifier(@Qualifier("publicAlgorithm") Algorithm algorithm){
         return JWT.require(algorithm).withIssuer(signer).build();
     }
-
 }

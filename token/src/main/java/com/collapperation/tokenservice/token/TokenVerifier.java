@@ -1,16 +1,17 @@
-package com.collapperation.tokenservice.validator;
+package com.collapperation.tokenservice.token;
 
 
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.auth0.jwt.interfaces.JWTVerifier;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TokenValidator {
+public class TokenVerifier implements TokenValidator{
     private final JWTVerifier jwtVerifier;
 
-    public TokenValidator(JWTVerifier jwtVerifier) {
+    public TokenVerifier(JWTVerifier jwtVerifier) {
         this.jwtVerifier = jwtVerifier;
     }
 
