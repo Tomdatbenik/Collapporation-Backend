@@ -1,4 +1,4 @@
-package com.collaperation.eureka;
+package com.collapporation.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

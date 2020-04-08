@@ -1,4 +1,4 @@
-package com.collapperation.tokenservice.token;
+package com.collapporation.tokenservice.token;
 
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;

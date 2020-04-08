@@ -19,7 +19,7 @@ eureka:
     instance:
       preferIpAddress: true
 
-collapperation:
+collapporation:
   token:
     issuer: collapperation-token-service
     lifeSpan: 60

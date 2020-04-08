@@ -1,8 +1,8 @@
-package com.collapperation.tokenservice.controller;
+package com.collapporation.tokenservice.controller;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.collapperation.tokenservice.token.TokenBuilder;
-import com.collapperation.tokenservice.token.TokenValidator;
+import com.collapporation.tokenservice.token.TokenBuilder;
+import com.collapporation.tokenservice.token.TokenValidator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseToken;

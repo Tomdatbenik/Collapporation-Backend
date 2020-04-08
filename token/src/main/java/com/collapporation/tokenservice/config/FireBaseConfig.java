@@ -1,4 +1,4 @@
-package com.collapperation.tokenservice.config;
+package com.collapporation.tokenservice.config;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;

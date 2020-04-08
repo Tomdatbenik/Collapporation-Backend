@@ -1,4 +1,4 @@
-package com.collapperation.tokenservice.utils;
+package com.collapporation.tokenservice.utils;
 
 import org.bouncycastle.util.io.pem.PemObject;
 import org.bouncycastle.util.io.pem.PemReader;

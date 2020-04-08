@@ -1,10 +1,10 @@
-package com.collapperation.tokenservice;
+package com.collapporation.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TokenserviceApplicationTests {
+class GatewayApplicationTests {
 
 	@Test
 	void contextLoads() {
