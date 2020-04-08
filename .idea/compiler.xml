@@ -9,6 +9,7 @@
         <module name="TokenService" />
         <module name="Gateway" />
         <module name="Eureka" />
+        <module name="UserService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="Gateway" target="11" />
       <module name="tokenservice" target="11" />
       <module name="TokenService" target="11" />
+      <module name="UserService" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -23,6 +25,7 @@
       <module name="Eureka" options="-parameters" />
       <module name="Gateway" options="-parameters" />
       <module name="TokenService" options="-parameters" />
+      <module name="UserService" options="-parameters" />
       <module name="tokenservice" options="-parameters" />
     </option>
   </component>
