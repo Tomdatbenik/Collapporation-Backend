@@ -1,9 +1,8 @@
 package com.collapperation.tokenservice.token;
 
 import com.auth0.jwt.interfaces.Claim;
+import com.auth0.jwt.interfaces.DecodedJWT;
 
 public interface TokenValidator {
-    public boolean validate(String token);
-
-    public Claim getClaim(String token, String claimName);
+    DecodedJWT verify(String token);
 }

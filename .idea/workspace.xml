@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="558aefc2-0825-4030-8377-cb9bfb8d883d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_63.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/token/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/config/FireBaseConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/token/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/controller/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/controller/TokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/generator/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/validator/TokenValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/token/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/token/src/main/java/com/collapperation/tokenservice/token/TokenVerifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -174,7 +168,7 @@
       <workItem from="1585133009649" duration="5915000" />
       <workItem from="1585509141388" duration="80000" />
       <workItem from="1585727058795" duration="10095000" />
-      <workItem from="1586330937133" duration="1557000" />
+      <workItem from="1586330937133" duration="3367000" />
     </task>
     <servers />
   </component>
