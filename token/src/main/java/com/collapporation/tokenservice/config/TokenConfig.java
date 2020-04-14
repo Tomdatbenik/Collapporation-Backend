@@ -15,7 +15,7 @@ import java.security.interfaces.RSAPublicKey;
 
 @Configuration
 public class TokenConfig {
-    @Value("${collapperation.token.privatekey}")
+    @Value("${collapporation.token.privatekey}")
     private String filepath;
 
     @Bean("privateAlgorithm")
@@ -23,7 +23,7 @@ public class TokenConfig {
         return Algorithm.RSA512(null, (RSAPrivateKey) PemUtils.readPrivateKeyFromFile(filepath, "RSA"));
     }
 
-    @Value("${collapperation.token.publicKey}")
+    @Value("${collapporation.token.publicKey}")
     private String publicKey;
 
     @Bean("publicAlgorithm")
@@ -31,7 +31,7 @@ public class TokenConfig {
         return Algorithm.RSA512((RSAPublicKey) PemUtils.readPublicKeyFromFile(publicKey, "RSA"), null);
     }
 
-    @Value("${collapperation.token.issuer}")
+    @Value("${collapporation.token.issuer}")
     private String signer;
 
     @Bean
