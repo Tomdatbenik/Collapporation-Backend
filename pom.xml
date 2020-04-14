@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.collapperation</groupId>
-    <artifactId>tokenservice</artifactId>
+    <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tokenservice</name>
-    <description>Token service for Collapperation</description>
+    <name>parent</name>
+    <description>Parent pom of Collapperation</description>
 
     <properties>
         <java.version>11</java.version>
