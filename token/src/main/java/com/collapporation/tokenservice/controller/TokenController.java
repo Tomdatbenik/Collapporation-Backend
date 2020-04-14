@@ -1,6 +1,8 @@
 package com.collapporation.tokenservice.controller;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.collapporation.tokenservice.dispatcher.Dispatcher;
+import com.collapporation.tokenservice.events.UserLoggedInEvent;
 import com.collapporation.tokenservice.token.TokenBuilder;
 import com.collapporation.tokenservice.token.TokenValidator;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,12 +26,21 @@ public class TokenController {
     private final TokenBuilder tokenBuilder;
     private final TokenValidator tokenValidator;
     private final FirebaseAuth firebaseAuth;
+    private final Dispatcher dispatcher;
 
     @GetMapping("/new")
     public ResponseEntity<String> newToken(@RequestHeader("idToken") String idToken) {
         try {
             logger.info("getting firebase token");
             final FirebaseToken firebaseToken = firebaseAuth.verifyIdToken(idToken);
+            logger.info("dispatching event");
+            dispatcher.dispatch("user",new UserLoggedInEvent(
+                    firebaseToken.getUid(),
+                    firebaseToken.getName(),
+                    "",
+                    "",
+                    firebaseToken.getPicture()
+            ));
             logger.info("generating token");
             return new ResponseEntity<>(tokenBuilder.getNewToken(
                     firebaseToken.getUid(), firebaseToken.getName(), firebaseToken.getPicture()), HttpStatus.OK);

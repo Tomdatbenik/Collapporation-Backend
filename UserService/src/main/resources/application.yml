@@ -3,9 +3,6 @@ spring:
     active:
   application:
     name: user-service
-  kafka:
-    producer:
-      bootstrap-servers: tomdatbenik.nl:9092
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
@@ -13,6 +10,9 @@ spring:
     password: password
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+  kafka:
+    consumer:
+      bootstrap-servers: tomdatbenik.nl:9092
 
 server:
   port: 8093

@@ -15,7 +15,7 @@ import java.security.interfaces.RSAPublicKey;
 
 @Configuration
 public class TokenConfig {
-    @Value("${collapporation.token.privatekey}")
+    @Value("${collapporation.token.privateKey}")
     private String filepath;
 
     @Bean("privateAlgorithm")
