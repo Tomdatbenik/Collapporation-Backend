@@ -33,6 +33,11 @@ script:
  - mvn clean install
  - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
  #End of needed copy
+ #Copy lines for a new subfolder to build and push dockerfile
+ - cd ../UserService
+ - mvn clean install
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-userservice:latest .
+ #End of needed copy
 
 # add line to after_success if another docker image is created above(as many docker push lines as copy till end copy code)
 after_success:
@@ -43,5 +48,7 @@ after_success:
  - docker push docker.io/$DOCKER_NAME/collaporation-gateway:latest
  - cd ../token
  - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
+ - cd ../UserService
+ - docker push docker.io/$DOCKER_NAME/collaporation-userservice:latest
 
 
