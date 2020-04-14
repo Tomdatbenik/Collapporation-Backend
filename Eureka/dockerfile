@@ -8,6 +8,7 @@ VOLUME /tmp
 EXPOSE 8101
 
 # The application's jar file
+# The jar file's name is the pom.xml artifactId-version.jar, if this name needs to be changed, it needs to be changed a total of 3 times in this file
 ARG JAR_FILE=target/eureka-0.0.1-SNAPSHOT.jar
 
 RUN mkdir /collapporation

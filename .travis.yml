@@ -22,26 +22,26 @@ script:
  - cd Eureka
  - mvn clean install
  - docker build -t docker.io/$DOCKER_NAME/collaporation-eureka:latest .
- - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
- - docker push docker.io/$DOCKER_NAME/collaporation-eureka:latest
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../Gateway
  - mvn clean install
  - docker build -t docker.io/$DOCKER_NAME/collaporation-gateway:latest .
- - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
- - docker push docker.io/$DOCKER_NAME/collaporation-gateway:latest
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../token
  - mvn clean install
  - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
- - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
- - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
  #End of needed copy
 
-#after_success:
-#    - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
-#    - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
+# add line to after_success if another docker image is created above(as many docker push lines as copy till end copy code)
+after_success:
+ - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+ - cd ../Eureka
+ - docker push docker.io/$DOCKER_NAME/collaporation-eureka:latest
+ - cd ../Gateway
+ - docker push docker.io/$DOCKER_NAME/collaporation-gateway:latest
+ - cd ../token
+ - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
 
 
