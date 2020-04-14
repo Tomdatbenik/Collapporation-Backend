@@ -18,10 +18,15 @@ install:
 
 script:
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=Tomdatbenik_Collapporation-Backend
+ #copy lines for a new subfolder to build and push dockerfile
  - cd token
  - mvn clean install
  - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
+ - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+ - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
 
-after_success:
-    - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
-    - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
+#after_success:
+#    - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+#    - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
+
+
