@@ -20,10 +20,10 @@ script:
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=Tomdatbenik_Collapporation-Backend
  #Copy lines for a new subfolder to build and push dockerfile
  - cd Eureka
-  - mvn clean install
-  - docker build -t docker.io/$DOCKER_NAME/collaporation-eureka:latest .
-  - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
-  - docker push docker.io/$DOCKER_NAME/collaporation-eureka:latest
+ - mvn clean install
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-eureka:latest .
+ - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+ - docker push docker.io/$DOCKER_NAME/collaporation-eureka:latest
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../Gateway
