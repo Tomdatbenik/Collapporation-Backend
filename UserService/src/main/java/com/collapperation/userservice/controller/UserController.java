@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserRepo userRepo;
 
+    //TODO Make it so other users can't get private details form other users.
     @GetMapping("/{userid}")
     public ResponseEntity<User> getUser(@PathVariable("userid") String userId) {
         final User user = userRepo.findById(userId).orElse(null);
