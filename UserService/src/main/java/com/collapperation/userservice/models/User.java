@@ -1,4 +1,4 @@
-package com.collapperations.userservice.models;
+package com.collapperation.userservice.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

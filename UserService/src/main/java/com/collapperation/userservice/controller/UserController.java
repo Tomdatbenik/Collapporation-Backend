@@ -1,7 +1,7 @@
-package com.collapperations.userservice.controller;
+package com.collapperation.userservice.controller;
 
-import com.collapperations.userservice.models.User;
-import com.collapperations.userservice.repo.UserRepo;
+import com.collapperation.userservice.models.User;
+import com.collapperation.userservice.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

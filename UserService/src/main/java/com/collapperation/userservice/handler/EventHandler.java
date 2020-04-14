@@ -1,6 +1,6 @@
-package com.collapperations.userservice.handler;
+package com.collapperation.userservice.handler;
 
-import com.collapperations.userservice.events.Event;
+import com.collapperation.userservice.events.Event;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

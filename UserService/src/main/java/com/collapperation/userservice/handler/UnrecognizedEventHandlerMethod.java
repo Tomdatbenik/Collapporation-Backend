@@ -1,6 +1,6 @@
-package com.collapperations.userservice.handler;
+package com.collapperation.userservice.handler;
 
-import com.collapperations.userservice.events.Event;
+import com.collapperation.userservice.events.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

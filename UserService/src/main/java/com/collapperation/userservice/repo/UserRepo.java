@@ -1,6 +1,6 @@
-package com.collapperations.userservice.repo;
+package com.collapperation.userservice.repo;
 
-import com.collapperations.userservice.models.User;
+import com.collapperation.userservice.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepo extends JpaRepository<User, String> {
