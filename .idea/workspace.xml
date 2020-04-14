@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="558aefc2-0825-4030-8377-cb9bfb8d883d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/java/com/collapperation/userservice/config/JacksonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/java/com/collapperation/userservice/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/src/main/java/com/collapperation/userservice/handler/UserLoggedInEventHandlerMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/collapperations/userservice/kafka/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/collapperations/userservice/kafka/KafkaConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/collapperation/userservice/kafka/KafkaDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/collapperation/userservice/kafka/KafkaDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +201,7 @@
       <workItem from="1585509141388" duration="80000" />
       <workItem from="1585727058795" duration="10095000" />
       <workItem from="1586330937133" duration="17019000" />
-      <workItem from="1586846956745" duration="292000" />
+      <workItem from="1586846956745" duration="1872000" />
     </task>
     <servers />
   </component>
@@ -218,10 +220,10 @@
       <screen x="0" y="0" width="1842" height="1200" />
     </state>
     <state x="375" y="256" width="1092" height="898" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1586342103090" />
-    <state x="726" y="310" key="#com.intellij.ide.util.MemberChooser" timestamp="1586353588271">
+    <state x="726" y="310" key="#com.intellij.ide.util.MemberChooser" timestamp="1586847782179">
       <screen x="0" y="0" width="1842" height="1200" />
     </state>
-    <state x="726" y="310" key="#com.intellij.ide.util.MemberChooser/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1586353588271" />
+    <state x="726" y="310" key="#com.intellij.ide.util.MemberChooser/-1920.109.1474.864/0.0.1842.1200/1920.-20.1600.1200@0.0.1842.1200" timestamp="1586847782179" />
     <state x="650" y="385" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585132368859">
       <screen x="0" y="0" width="1842" height="1200" />
     </state>
