@@ -20,8 +20,8 @@ script:
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=Tomdatbenik_Collapporation-Backend
  - cd token
  - mvn clean install
-# - docker build -t docker.io/$DOCKER_NAME/animechat-rest:latest .
-#
-#after_success:
-#    - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
-#    - docker push docker.io/$DOCKER_NAME/animechat-rest:latest
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
+
+after_success:
+    - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+    - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
