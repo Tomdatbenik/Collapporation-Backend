@@ -5,7 +5,7 @@ spring:
     name: token-service
   kafka:
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: tomdatbenik.nl
 
 server:
   port: 8092
