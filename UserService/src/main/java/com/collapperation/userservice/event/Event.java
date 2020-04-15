@@ -1,4 +1,4 @@
-package com.collapperation.userservice.events;
+package com.collapperation.userservice.event;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

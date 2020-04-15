@@ -1,6 +1,6 @@
 package com.collapperation.userservice.controller;
 
-import com.collapperation.userservice.models.User;
+import com.collapperation.userservice.model.User;
 import com.collapperation.userservice.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

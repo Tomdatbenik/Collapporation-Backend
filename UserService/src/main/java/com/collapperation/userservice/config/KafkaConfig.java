@@ -1,6 +1,6 @@
 package com.collapperation.userservice.config;
 
-import com.collapperation.userservice.events.Event;
+import com.collapperation.userservice.event.Event;
 import com.collapperation.userservice.kafka.KafkaDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

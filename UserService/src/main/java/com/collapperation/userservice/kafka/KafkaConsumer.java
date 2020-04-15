@@ -1,6 +1,6 @@
 package com.collapperation.userservice.kafka;
 
-import com.collapperation.userservice.events.Event;
+import com.collapperation.userservice.event.Event;
 import com.collapperation.userservice.handler.EventHandler;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;

@@ -1,8 +1,8 @@
 package com.collapperation.userservice.handler;
 
-import com.collapperation.userservice.events.Event;
-import com.collapperation.userservice.events.UserLoggedInEvent;
-import com.collapperation.userservice.models.User;
+import com.collapperation.userservice.event.Event;
+import com.collapperation.userservice.event.UserLoggedInEvent;
+import com.collapperation.userservice.model.User;
 import com.collapperation.userservice.repo.UserRepo;
 import org.springframework.stereotype.Component;
 
