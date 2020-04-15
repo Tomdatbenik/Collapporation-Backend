@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+//TODO Persistences / validation
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

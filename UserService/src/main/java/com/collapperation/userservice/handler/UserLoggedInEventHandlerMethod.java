@@ -15,6 +15,8 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
         this.userRepo = userRepo;
     }
 
+
+    //TODO make user events convertible to user
     @Override
     public void handle(Event event) {
         UserLoggedInEvent userLoggedInEvent = (UserLoggedInEvent) event;
