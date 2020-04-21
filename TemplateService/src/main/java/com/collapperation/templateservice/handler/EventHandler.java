@@ -1,6 +1,7 @@
 package com.collapperation.templateservice.handler;
 
 import com.collapperation.templateservice.event.Event;
+import com.collapperation.templateservice.handler.method.UnrecognizedEventHandlerMethod;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
