@@ -43,6 +43,16 @@ public class UserTests {
         final User userA = new User();
         final User userB = new User();
 
-        assertThat(userA.equals(userB)).isEqualTo(true);
+        assertThat(userA).isEqualTo(userB);
+    }
+
+    @Test
+    public void notEqualTest(){
+        final User userA = new User();
+        final User userB = new User();
+
+        userA.setPicture("to something");
+
+        assertThat(userA).isNotEqualTo(userB);
     }
 }
