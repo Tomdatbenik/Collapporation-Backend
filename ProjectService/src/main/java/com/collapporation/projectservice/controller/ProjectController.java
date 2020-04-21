@@ -16,7 +16,7 @@ public class ProjectController {
     private final ProjectService projectService;
 
     //TODO Make it so other users can't get private details form other users.
-    @GetMapping("/{userId}")
+    @GetMapping("/{projectId}")
     public ResponseEntity<Project> getUser(@PathVariable("projectId") String projectId) {
         final Project user = projectService.getProject(projectId);
         if(user == null){
