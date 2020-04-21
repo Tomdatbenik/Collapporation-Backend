@@ -1,6 +1,6 @@
-package com.collapperation.userservice.handler;
+package com.collapperation.projectservice.handler;
 
-import com.collapperation.userservice.event.Event;
+import com.collapperation.projectservice.event.Event;
 
 public abstract class HandlerMethod<T extends Event> {
     private final Class<T> clazz;

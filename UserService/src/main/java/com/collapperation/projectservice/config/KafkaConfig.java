@@ -1,7 +1,7 @@
-package com.collapperation.userservice.config;
+package com.collapperation.projectservice.config;
 
-import com.collapperation.userservice.event.Event;
-import com.collapperation.userservice.kafka.KafkaDeserializer;
+import com.collapperation.projectservice.event.Event;
+import com.collapperation.projectservice.kafka.KafkaDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;

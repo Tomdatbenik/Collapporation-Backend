@@ -1,4 +1,4 @@
-package com.collapperation.userservice;
+package com.collapperation.projectservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
