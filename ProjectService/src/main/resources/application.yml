@@ -15,7 +15,7 @@ spring:
       bootstrap-servers: tomdatbenik.nl:9092
 
 server:
-  port:
+  port: 8094
 
 eureka:
   client:
