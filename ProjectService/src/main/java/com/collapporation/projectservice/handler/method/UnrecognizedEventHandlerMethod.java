@@ -1,6 +1,7 @@
-package com.collapporation.projectservice.handler;
+package com.collapporation.projectservice.handler.method;
 
 import com.collapporation.projectservice.event.Event;
+import com.collapporation.projectservice.handler.HandlerMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

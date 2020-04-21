@@ -1,6 +1,7 @@
 package com.collapporation.projectservice.handler;
 
 import com.collapporation.projectservice.event.Event;
+import com.collapporation.projectservice.handler.method.UnrecognizedEventHandlerMethod;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
