@@ -18,15 +18,14 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
 
 
     //TODO make user events convertible to user
+    //TODO is broken, fix this
     @Override
     public void handle(UserLoggedInEvent event) {
         UserLoggedInEvent userLoggedInEvent = (UserLoggedInEvent) event;
-        userRepo.save(new User(
-                userLoggedInEvent.getUuid(),
-                userLoggedInEvent.getUserName(),
-                userLoggedInEvent.getFirstName(),
-                userLoggedInEvent.getLastName(),
-                null,
-                userLoggedInEvent.getPicture()));
+//        userRepo.save(new User(
+//                userLoggedInEvent.getUuid(),
+//                userLoggedInEvent.getUserName(),
+//                null,
+//                userLoggedInEvent.getPicture()));
     }
 }
