@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active:
+  application:
+    name: template-service
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  kafka:
+    consumer:
+      bootstrap-servers: tomdatbenik.nl:9092
+
+server:
+  port:
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "${EUREKA_URI:http://localhost:8101/eureka}"
+    instance:
+      preferIpAddress: true
