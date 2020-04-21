@@ -1,6 +1,6 @@
 package com.collapperation.userservice.kafka;
 
-import com.collapperation.userservice.events.Event;
+import com.collapperation.userservice.event.Event;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.apache.kafka.common.serialization.Deserializer;

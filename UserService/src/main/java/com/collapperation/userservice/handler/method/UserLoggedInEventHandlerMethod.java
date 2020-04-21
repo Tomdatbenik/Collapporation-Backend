@@ -1,8 +1,9 @@
-package com.collapperation.userservice.handler;
+package com.collapperation.userservice.handler.method;
 
-import com.collapperation.userservice.events.Event;
-import com.collapperation.userservice.events.UserLoggedInEvent;
-import com.collapperation.userservice.models.User;
+import com.collapperation.userservice.event.Event;
+import com.collapperation.userservice.event.UserLoggedInEvent;
+import com.collapperation.userservice.handler.HandlerMethod;
+import com.collapperation.userservice.model.User;
 import com.collapperation.userservice.repo.UserRepo;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +19,7 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
 
     //TODO make user events convertible to user
     @Override
-    public void handle(Event event) {
+    public void handle(UserLoggedInEvent event) {
         UserLoggedInEvent userLoggedInEvent = (UserLoggedInEvent) event;
         userRepo.save(new User(
                 userLoggedInEvent.getUuid(),

@@ -1,16 +1,17 @@
-package com.collapperation.userservice.handler;
+package com.collapperation.userservice.handler.method;
 
-import com.collapperation.userservice.events.Event;
+import com.collapperation.userservice.event.Event;
+import com.collapperation.userservice.handler.HandlerMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UnrecognizedEventHandlerMethod extends HandlerMethod {
+public class UnrecognizedEventHandlerMethod extends HandlerMethod<Event> {
     private final Logger logger = LoggerFactory.getLogger(UnrecognizedEventHandlerMethod.class);
 
     protected UnrecognizedEventHandlerMethod() {
-        super(UnrecognizedEventHandlerMethod.class);
+        super(Event.class);
     }
 
     @Override
