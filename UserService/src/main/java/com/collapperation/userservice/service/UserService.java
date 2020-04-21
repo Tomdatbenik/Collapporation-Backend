@@ -1,7 +1,7 @@
-package com.collapperation.projectservice.service;
+package com.collapperation.userservice.service;
 
-import com.collapperation.projectservice.model.User;
-import com.collapperation.projectservice.repo.UserRepo;
+import com.collapperation.userservice.model.User;
+import com.collapperation.userservice.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

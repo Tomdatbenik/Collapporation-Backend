@@ -1,7 +1,7 @@
-package com.collapperation.projectservice.handler;
+package com.collapperation.userservice.handler;
 
-import com.collapperation.projectservice.event.Event;
-import com.collapperation.projectservice.handler.method.UnrecognizedEventHandlerMethod;
+import com.collapperation.userservice.event.Event;
+import com.collapperation.userservice.handler.method.UnrecognizedEventHandlerMethod;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

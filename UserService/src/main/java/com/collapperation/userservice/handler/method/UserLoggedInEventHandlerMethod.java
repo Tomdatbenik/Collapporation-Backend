@@ -1,9 +1,10 @@
-package com.collapperation.projectservice.handler.method;
+package com.collapperation.userservice.handler.method;
 
-import com.collapperation.projectservice.event.UserLoggedInEvent;
-import com.collapperation.projectservice.handler.HandlerMethod;
-import com.collapperation.projectservice.model.User;
-import com.collapperation.projectservice.repo.UserRepo;
+import com.collapperation.userservice.event.Event;
+import com.collapperation.userservice.event.UserLoggedInEvent;
+import com.collapperation.userservice.handler.HandlerMethod;
+import com.collapperation.userservice.model.User;
+import com.collapperation.userservice.repo.UserRepo;
 import org.springframework.stereotype.Component;
 
 @Component
