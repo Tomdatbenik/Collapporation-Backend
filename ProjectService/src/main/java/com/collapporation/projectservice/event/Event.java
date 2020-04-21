@@ -11,6 +11,6 @@ public abstract class Event {
     private String creator;
 
     public Event() {
-        this.creator = "template-service";
+        this.creator = "project-service";
     }
 }
