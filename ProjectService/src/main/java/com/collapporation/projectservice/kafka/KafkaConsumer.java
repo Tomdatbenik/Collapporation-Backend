@@ -14,7 +14,7 @@ public class KafkaConsumer {
     private final Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
     private final EventHandler eventHandler;
 
-    @KafkaListener(topics = "template", groupId = "${spring.application.name}")
+    @KafkaListener(topics = "project", groupId = "${spring.application.name}")
     public void consume(Event event){
         logger.info("received event");
         eventHandler.processEvent(event);
