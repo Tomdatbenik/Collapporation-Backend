@@ -16,5 +16,6 @@ public class FeedService {
 
     public List<ProjectFeedDTO> getProjectFeed(int page, int size){
         Pageable pageable = PageRequest.of(page, size);
+        return projectRepo.findAllByOrderByCreatedDesc(pageable);
     }
 }

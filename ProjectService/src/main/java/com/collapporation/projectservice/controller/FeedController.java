@@ -21,6 +21,6 @@ public class FeedController {
 
     @GetMapping("/all")
     public List<ProjectFeedDTO> getProjectfeeds(@Param("page") int page, @Param("size") int size){
-        return feedService.
+        return feedService.getProjectFeed(page, size);
     }
 }
