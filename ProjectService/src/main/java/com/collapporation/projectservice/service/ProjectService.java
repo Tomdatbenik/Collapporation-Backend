@@ -1,6 +1,7 @@
 package com.collapporation.projectservice.service;
 
 import com.collapporation.projectservice.event.ProjectCreatedEvent;
+import com.collapporation.projectservice.event.ProjectUpdateEvent;
 import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
@@ -30,6 +31,6 @@ public class ProjectService {
 
     public void updateStatus(String id, ProjectStatus status)
     {
-
+        dispatcher.dispatch("project", new ProjectUpdateEvent(id,status));
     }
 }

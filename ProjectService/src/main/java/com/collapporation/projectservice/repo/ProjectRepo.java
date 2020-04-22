@@ -18,5 +18,5 @@ public interface ProjectRepo extends JpaRepository<Project, String> {
 
     @Modifying
     @Query("UPDATE project p SET p.status = :newStatus where p.id = :id")
-    public void updateStatus(@Param("newStatus") ProjectStatus status, @Param("id") String id);
+    public void updateStatus(@Param("id") String id, @Param("newStatus") ProjectStatus status);
 }
