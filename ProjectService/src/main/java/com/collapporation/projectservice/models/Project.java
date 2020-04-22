@@ -13,18 +13,58 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.lang.reflect.Array;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "project")
-public class Project {
+public class Project
+{
+    @Id
+    @JsonProperty("id")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(name = "id", unique = true)
+    private String id;
 
-    public Project(BasicDTO project) {
+    @Column(name = "title")
+    @JsonProperty("title")
+    @Length(min = 0, max = 255)
+    private String title;
+
+    @Column(name = "smalldescription")
+    @JsonProperty("smallDescription")
+    @Length(min = 0, max = 255)
+    private String smallDescription;
+
+    //TODO might give errors
+    @Column(name = "description", columnDefinition = "TEXT")
+    @JsonProperty("description")
+    private String description;
+
+    @Column(name = "status")
+    @JsonProperty("status")
+    private ProjectStatus status;
+
+    //TODO might give errors
+    @JsonProperty("img")
+    @Column(name = "img", columnDefinition = "TEXT")
+    private String img;
+
+    @Column(name = "ownerid")
+    @JsonProperty("ownerId")
+    private String ownerId;
+
+    @Column(name = "created")
+    @CreationTimestamp
+    @JsonProperty("created")
+    private LocalDateTime created;
+
+    //TODO think about this: UpdateTimestamp
+
+    public Project(BasicDTO project)
+    {
         id = project.getId();
         title = project.getTitle();
         smallDescription = project.getSmallDescription();
@@ -32,46 +72,4 @@ public class Project {
         ownerId = project.getOwnerId();
         img = project.getImg();
     }
-
-    @Id
-    @JsonProperty("id")
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(unique = true)
-    private String id;
-
-    @Column
-    @JsonProperty("title")
-    @Length(min = 0,max = 255)
-    private String title;
-
-    @Column
-    @JsonProperty("smallDescription")
-    @Length(min = 0,max = 255)
-    private String smallDescription;
-
-    //TODO might give errors
-    @Column(columnDefinition="TEXT")
-    @JsonProperty("description")
-    private String description;
-
-    @Column
-    @JsonProperty("status")
-    private ProjectStatus status;
-
-    //TODO might give errors
-    @JsonProperty("img")
-    @Column(columnDefinition="TEXT")
-    private String img;
-
-    @Column
-    @JsonProperty("ownerId")
-    private String ownerId;
-
-    @Column
-    @CreationTimestamp
-    @JsonProperty("created")
-    private LocalDateTime created;
-
-    //TODO think about this: UpdateTimestamp
 }
