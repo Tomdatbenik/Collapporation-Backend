@@ -11,12 +11,15 @@ import java.util.List;
 public class ProjectDTO extends BasicDTO{
 
     public ProjectDTO(Project project) {
-        title = project.getTitle();
-        description = project.getDescription();
-        smallDescription = project.getSmallDescription();
-        status = project.getStatus();
-        img = project.getImg();
-        ownerId = project.getOwnerId();
+        if(project != null)
+        {
+            title = project.getTitle();
+            description = project.getDescription();
+            smallDescription = project.getSmallDescription();
+            status = project.getStatus();
+            img = project.getImg();
+            ownerId = project.getOwnerId();
+        }
     }
 
     private String description;

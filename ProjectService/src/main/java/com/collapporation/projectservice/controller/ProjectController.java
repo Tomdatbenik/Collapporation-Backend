@@ -2,6 +2,7 @@ package com.collapporation.projectservice.controller;
 
 import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
+import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -46,6 +47,14 @@ public class ProjectController {
     public ResponseEntity createProject(@RequestBody Project project)
     {
         projectService.createProject(project);
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PutMapping("/update/status")
+    public ResponseEntity conceptToProject(@PathVariable("projectId") String id, @PathVariable("status") ProjectStatus status)
+    {
+        projectService.updateStatus(id,status);
 
         return new ResponseEntity(HttpStatus.OK);
     }
