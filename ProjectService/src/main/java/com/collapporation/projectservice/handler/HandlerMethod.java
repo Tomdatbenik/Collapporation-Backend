@@ -13,5 +13,5 @@ public abstract class HandlerMethod<T extends Event> {
         return clazz;
     }
 
-    public abstract void handle(Event event);
+    public abstract void handle(T event);
 }

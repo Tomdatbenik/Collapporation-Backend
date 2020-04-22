@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @AllArgsConstructor
@@ -38,5 +40,13 @@ public class ProjectController {
         }
 
         return new ResponseEntity(project, HttpStatus.OK);
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity createProject(@RequestBody Project project)
+    {
+        projectService.createProject(project);
+
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
