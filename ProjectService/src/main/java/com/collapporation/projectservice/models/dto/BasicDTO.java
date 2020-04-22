@@ -5,6 +5,8 @@ import com.collapporation.projectservice.models.ProjectStatus;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class BasicDTO {
@@ -16,6 +18,7 @@ public abstract class BasicDTO {
         status = project.getStatus();
         img = project.getImg();
         ownerId = project.getOwnerId();
+        created = project.getCreated();
     }
 
     protected String id;
@@ -24,6 +27,7 @@ public abstract class BasicDTO {
     protected ProjectStatus status;
     protected String img;
     protected String ownerId;
+    protected LocalDateTime created;
 
     //region Getters ctrl+alt+t
     public String getId() {
@@ -49,5 +53,10 @@ public abstract class BasicDTO {
     public String getOwnerId() {
         return ownerId;
     }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
     //endregion
 }

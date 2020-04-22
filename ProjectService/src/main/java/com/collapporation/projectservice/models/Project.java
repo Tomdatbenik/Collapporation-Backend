@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.lang.reflect.Array;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,4 +66,9 @@ public class Project {
     @Column
     @JsonProperty("description")
     private String ownerId;
+
+    @Column
+    @JsonProperty("description")
+    private LocalDateTime created;
+
 }
