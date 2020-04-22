@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 
@@ -33,7 +34,7 @@ public class Project {
     }
 
     @Id
-    @JsonProperty("advertId")
+    @JsonProperty("id")
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Column(unique = true)
@@ -55,20 +56,22 @@ public class Project {
     private String description;
 
     @Column
-    @JsonProperty("description")
+    @JsonProperty("status")
     private ProjectStatus status;
 
     //TODO might give errors
-    @JsonProperty("description")
+    @JsonProperty("img")
     @Column(columnDefinition="TEXT")
     private String img;
 
     @Column
-    @JsonProperty("description")
+    @JsonProperty("ownerId")
     private String ownerId;
 
     @Column
-    @JsonProperty("description")
+    @CreationTimestamp
+    @JsonProperty("created")
     private LocalDateTime created;
 
+    //TODO think about this: UpdateTimestamp
 }
