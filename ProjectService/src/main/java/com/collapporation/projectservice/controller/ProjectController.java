@@ -1,6 +1,7 @@
 package com.collapporation.projectservice.controller;
 
 import com.collapporation.projectservice.models.Project;
+import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,13 +16,18 @@ import org.springframework.web.bind.annotation.*;
 public class ProjectController {
     private final ProjectService projectService;
 
-    //TODO Make it so other users can't get private details form other users.
     @GetMapping("/{projectId}")
-    public ResponseEntity<Project> getUser(@PathVariable("projectId") String projectId) {
-        final Project user = projectService.getProject(projectId);
-        if(user == null){
+    public ResponseEntity<Project> getProject(@PathVariable("projectId") String projectId) {
+        final ProjectDTO project = new ProjectDTO(projectService.getProject(projectId));
+
+        if(project == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity(user, HttpStatus.OK);
+        else
+        {
+            //TODO fill project with tags links comments etc.
+        }
+
+        return new ResponseEntity(project, HttpStatus.OK);
     }
 }
