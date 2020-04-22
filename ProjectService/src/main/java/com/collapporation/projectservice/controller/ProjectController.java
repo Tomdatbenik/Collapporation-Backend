@@ -52,7 +52,7 @@ public class ProjectController {
     }
 
     @PutMapping("/update/status")
-    public ResponseEntity conceptToProject(@PathVariable("projectId") String projectId, @PathVariable("status") ProjectStatus status)
+    public ResponseEntity updateStatus(@PathVariable("projectId") String projectId, @PathVariable("status") ProjectStatus status)
     {
         projectService.updateStatus(projectId,status);
 
