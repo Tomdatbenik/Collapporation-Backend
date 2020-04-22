@@ -4,6 +4,7 @@ import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @RequestMapping("/project")
 public class ProjectController {
+
+    @Autowired
     private final ProjectService projectService;
 
     @GetMapping("/{projectId}")
