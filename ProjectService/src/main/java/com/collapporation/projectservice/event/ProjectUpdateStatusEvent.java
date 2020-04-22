@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProjectUpdateEvent extends Event{
+public class ProjectUpdateStatusEvent extends Event{
     private String projectId;
     private ProjectStatus status;
 
-    public ProjectUpdateEvent(String projectId, ProjectStatus status) {
+    public ProjectUpdateStatusEvent(String projectId, ProjectStatus status) {
         this.projectId = projectId;
         this.status = status;
     }
