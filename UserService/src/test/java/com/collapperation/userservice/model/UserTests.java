@@ -16,7 +16,7 @@ public class UserTests {
         assertThat(user.getFirstName()).isNull();
         assertThat(user.getLastName()).isNull();
         assertThat(user.getPicture()).isNull();
-        assertThat(user.getUserName()).isNull();
+        assertThat(user.getUsername()).isNull();
     }
 
     @Test
@@ -30,7 +30,7 @@ public class UserTests {
         final User user = new User(id, userName, firstName, lastName, bio, picture);
 
         assertThat(user).isNotNull();
-        assertThat(user.getUserName()).isEqualTo(userName);
+        assertThat(user.getUsername()).isEqualTo(userName);
         assertThat(user.getPicture()).isEqualTo(picture);
         assertThat(user.getLastName()).isEqualTo(lastName);
         assertThat(user.getFirstName()).isEqualTo(firstName);
