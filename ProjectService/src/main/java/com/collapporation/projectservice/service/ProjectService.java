@@ -1,14 +1,13 @@
 package com.collapporation.projectservice.service;
 
 import com.collapporation.projectservice.event.ProjectCreatedEvent;
+import com.collapporation.projectservice.event.ProjectUpdateStatusEvent;
 import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ProjectService {
@@ -30,6 +29,6 @@ public class ProjectService {
 
     public void updateStatus(String id, ProjectStatus status)
     {
-
+        dispatcher.dispatch("project", new ProjectUpdateStatusEvent(id,status));
     }
 }

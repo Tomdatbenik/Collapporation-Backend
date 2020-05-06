@@ -1,6 +1,6 @@
 package com.collapporation.projectservice.models;
 
-public enum  ProjectStatus {
+public enum ProjectStatus {
     CONCEPT,
     PROJECT
 }

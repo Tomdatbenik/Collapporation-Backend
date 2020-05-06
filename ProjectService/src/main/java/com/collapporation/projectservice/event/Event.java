@@ -3,14 +3,11 @@ package com.collapporation.projectservice.event;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Event {
-    private String creator;
-
-    public Event() {
-        this.creator = "project-service";
-    }
+    private String creator = "project-service";
 }
