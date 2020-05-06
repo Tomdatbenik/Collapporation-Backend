@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+		<spring-kafka.version>2.2.5.RELEASE</spring-kafka.version>
 	</properties>
 
 	<dependencies>
@@ -48,6 +49,7 @@
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
+			<version>${spring-kafka.version}</version>
 		</dependency>
 
 
@@ -68,11 +70,19 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<artifactId>spring-kafka-test</artifactId>
+			<version>${spring-kafka.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<dependencyManagement>
