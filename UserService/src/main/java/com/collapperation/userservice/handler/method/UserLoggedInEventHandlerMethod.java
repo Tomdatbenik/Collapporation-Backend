@@ -14,14 +14,11 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
         this.userRepo = userRepo;
     }
 
-
-    //TODO is broken, fix this
     @Override
     public void handle(UserLoggedInEvent event) {
-        UserLoggedInEvent userLoggedInEvent = (UserLoggedInEvent) event;
         userRepo.updateBasicUserInfo(
-                userLoggedInEvent.getPicture(),
-                userLoggedInEvent.getUserName(),
-                userLoggedInEvent.getUuid());
+                event.getPicture(),
+                event.getUsername(),
+                event.getUuid());
     }
 }
