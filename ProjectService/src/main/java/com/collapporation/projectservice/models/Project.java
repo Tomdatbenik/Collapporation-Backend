@@ -11,6 +11,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -61,45 +62,45 @@ public class Project implements IProject {
     //TODO think about this: UpdateTimestamp
 
     @Transient
-    private List<Object> tags;
+    private String tags;
     @Transient
-    private List<Object> links;
+    private String links;
     @Transient
-    private List<Object> collaborators;
+    private String collaborators;
     @Transient
-    private List<Object> comments;
+    private String comments;
     @Transient
-    private List<Object> likes;
+    private String likes;
     @Transient
-    private List<Object> follows;
+    private String follows;
 
     @Override
-    public List<Object> getTags() {
+    public String getTags() {
         return tags;
     }
 
     @Override
-    public List<Object> getLinks() {
+    public String getLinks() {
         return links;
     }
 
     @Override
-    public List<Object> getCollaborators() {
+    public String getCollaborators() {
         return collaborators;
     }
 
     @Override
-    public List<Object> getComments() {
+    public String getComments() {
         return comments;
     }
 
     @Override
-    public List<Object> getLikes() {
+    public String getLikes() {
         return likes;
     }
 
     @Override
-    public List<Object> getFollows() {
+    public String getFollows() {
         return follows;
     }
 }

@@ -14,10 +14,19 @@ public interface IProject {
     String getImg();
     String getOwnerId();
     LocalDateTime getCreated();
-    List<Object> getTags();
-    List<Object> getLinks();
-    List<Object> getCollaborators();
-    List<Object> getComments();
-    List<Object> getLikes();
-    List<Object> getFollows();
+    String getTags();
+    String getLinks();
+    String getCollaborators();
+    String getComments();
+    String getLikes();
+    String getFollows();
+
+    void setTags(String tags);
+    void setLinks(String links);
+    void setCollaborators(String Collaborators);
+    void setComments(String comments);
+    void setLikes(String likes);
+    void setFollows(String follows);
+
+
 }

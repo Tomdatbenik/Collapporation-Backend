@@ -9,10 +9,14 @@ import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.models.Projection.IProject;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProjectService {
+
+    @Value("${spring.kafka.topic}")
+    String kafkaTopic;
 
     @Autowired
     public ProjectRepo projectRepo;
@@ -26,16 +30,16 @@ public class ProjectService {
 
     public void createProject(Project project)
     {
-        dispatcher.dispatch("project", new ProjectCreatedEvent(project));
+        dispatcher.dispatch(kafkaTopic, new ProjectCreatedEvent(project));
     }
 
     public void update(Project project)
     {
-        dispatcher.dispatch("project", new ProjectUpdateEvent(project));
+        dispatcher.dispatch(kafkaTopic, new ProjectUpdateEvent(project));
     }
 
     public void updateStatus(String id, ProjectStatus status)
     {
-        dispatcher.dispatch("project", new ProjectUpdateStatusEvent(id,status));
+        dispatcher.dispatch(kafkaTopic, new ProjectUpdateStatusEvent(id,status));
     }
 }
