@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -24,10 +26,10 @@ public class FeedService {
     public List<IProjectFeed> getProjectFeed(int page, int size){
         Pageable pageable = PageRequest.of(page, size);
         List<IProjectFeed> projectFeedList = projectRepo.findAllByOrderByCreatedDesc(pageable);
+
         projectFeedList.stream().forEach(p -> {
-            Object test = restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class);
-            System.out.println(test);
+            p.setOwnerId("hallo");
         });
-        return new ArrayList<>();
+        return projectFeedList;
     }
 }
