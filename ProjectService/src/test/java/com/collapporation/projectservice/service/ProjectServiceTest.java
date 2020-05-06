@@ -17,16 +17,16 @@ public class ProjectServiceTest
     @Autowired
     private ProjectService projectService;
 
-//    @Test
-//    public void getProjectTest()
-//    {
-//        final Project project = projectService.getProject("0");
-//        assertThat(project).isNotNull();
-//    }
-//
-//    public void getNullTest()
-//    {
-//        final Project project = projectService.getProject("not an id");
-//        assertThat(project).isNull();
-//    }
+    @Test
+    public void getProjectTest()
+    {
+        final Project project = projectService.getProject("0");
+        assertThat(project).isNotNull();
+    }
+
+    public void getNullTest()
+    {
+        final Project project = projectService.getProject("not an id");
+        assertThat(project).isNull();
+    }
 }

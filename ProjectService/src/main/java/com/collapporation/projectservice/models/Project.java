@@ -1,6 +1,6 @@
 package com.collapporation.projectservice.models;
 
-import com.collapporation.projectservice.models.Projection.IProject;
+import com.collapporation.projectservice.models.dto.BasicDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,14 +11,13 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "project")
-public class Project implements IProject {
+public class Project
+{
     @Id
     @JsonProperty("id")
     @GeneratedValue(generator = "system-uuid")
@@ -60,47 +59,13 @@ public class Project implements IProject {
     private LocalDateTime created;
 
     //TODO think about this: UpdateTimestamp
-
-    @Transient
-    private String tags;
-    @Transient
-    private String links;
-    @Transient
-    private String collaborators;
-    @Transient
-    private String comments;
-    @Transient
-    private String likes;
-    @Transient
-    private String follows;
-
-    @Override
-    public String getTags() {
-        return tags;
-    }
-
-    @Override
-    public String getLinks() {
-        return links;
-    }
-
-    @Override
-    public String getCollaborators() {
-        return collaborators;
-    }
-
-    @Override
-    public String getComments() {
-        return comments;
-    }
-
-    @Override
-    public String getLikes() {
-        return likes;
-    }
-
-    @Override
-    public String getFollows() {
-        return follows;
+    public Project(BasicDTO project)
+    {
+        id = project.getId();
+        title = project.getTitle();
+        smallDescription = project.getSmallDescription();
+        status = project.getStatus();
+        ownerId = project.getOwnerId();
+        img = project.getImg();
     }
 }
