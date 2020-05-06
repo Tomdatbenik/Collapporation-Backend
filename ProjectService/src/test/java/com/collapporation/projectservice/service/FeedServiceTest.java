@@ -1,5 +1,7 @@
 package com.collapporation.projectservice.service;
 
+import com.collapporation.projectservice.models.Project;
+import com.collapporation.projectservice.models.Projection.IProjectFeed;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +22,18 @@ public class FeedServiceTest {
 
     @Test
     public void getFeedProjectsCorrectly(){
-        final List<ProjectFeedDTO> projectFeed = feedService.getProjectFeed(0, 10);
+        final List<IProjectFeed> projectFeed = feedService.getProjectFeed(0, 10);
 
         int expectedAmount = 2;
+
+        assertThat(projectFeed.size()).isEqualTo(expectedAmount);
+    }
+
+    @Test
+    public void getFeedProjectsIncorrectly(){
+        final List<IProjectFeed> projectFeed = feedService.getProjectFeed(1, 10);
+
+        int expectedAmount = 0;
 
         assertThat(projectFeed.size()).isEqualTo(expectedAmount);
     }
