@@ -19,4 +19,8 @@ public interface ProjectRepo extends JpaRepository<Project, String> {
     @Modifying
     @Query("UPDATE project p SET p.status = :newStatus WHERE p.id = :id")
     void updateStatus(@Param("id") String id, @Param("newStatus") ProjectStatus status);
+
+    @Modifying
+    @Query("UPDATE project p SET p = :newProject WHERE p.id = :projectId")
+    void update(@Param("projectId") String id, @Param("newProject") Project project);
 }
