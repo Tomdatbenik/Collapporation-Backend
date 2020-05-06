@@ -46,7 +46,6 @@ public class EventHandlerTests {
 
     @Test
     public void processUnknownEventTest(){
-        assertDoesNotThrow(() -> {
-            eventHandler.processEvent(new UnknownEvent());});
+        assertDoesNotThrow(() -> eventHandler.processEvent(new UnknownEvent()));
     }
 }
