@@ -12,7 +12,7 @@ public class UserLoggedInEventTests {
 
         assertThat(userLoggedInEvent).isNotNull();
         assertThat(userLoggedInEvent.getPicture()).isNull();
-        assertThat(userLoggedInEvent.getUserName()).isNull();
+        assertThat(userLoggedInEvent.getUsername()).isNull();
         assertThat(userLoggedInEvent.getUuid()).isNull();
         assertThat(userLoggedInEvent.getCreator()).isEqualTo("user-service");
     }
@@ -27,7 +27,7 @@ public class UserLoggedInEventTests {
         assertThat(userLoggedInEvent).isNotNull();
         assertThat(userLoggedInEvent.getCreator()).isEqualTo("user-service");
         assertThat(userLoggedInEvent.getUuid()).isEqualTo(uuid);
-        assertThat(userLoggedInEvent.getUserName()).isEqualTo(userName);
+        assertThat(userLoggedInEvent.getUsername()).isEqualTo(userName);
         assertThat(userLoggedInEvent.getPicture()).isEqualTo(picture);
     }
 

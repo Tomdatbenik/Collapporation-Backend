@@ -12,5 +12,6 @@ public interface IProjectFeed {
     String getImg();
     //TODO change ownerid to owner
     String getOwnerId();
+    void setOwnerId(String ownerId);
     LocalDateTime getCreated();
 }
