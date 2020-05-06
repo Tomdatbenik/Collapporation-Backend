@@ -2,8 +2,8 @@ package com.collapporation.projectservice.repo;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.models.Projection.IProject;
 import com.collapporation.projectservice.models.Projection.IProjectFeed;
-import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -20,4 +20,8 @@ public interface ProjectRepo extends JpaRepository<Project, String> {
     @Modifying
     @Query("UPDATE project p SET p.status = :newStatus WHERE p.id = :id")
     void updateStatus(@Param("id") String id, @Param("newStatus") ProjectStatus status);
+
+    @Modifying
+    @Query("UPDATE project p SET p = :newProject WHERE p.id = :projectId")
+    void update(@Param("projectId") String id, @Param("newProject") Project project);
 }

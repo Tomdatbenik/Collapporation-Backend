@@ -2,7 +2,6 @@ package com.collapporation.projectservice.controller;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.Projection.IProjectFeed;
-import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import com.collapporation.projectservice.service.FeedService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.repository.query.Param;
