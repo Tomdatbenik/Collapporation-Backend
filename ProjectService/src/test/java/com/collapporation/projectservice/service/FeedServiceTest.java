@@ -2,6 +2,7 @@ package com.collapporation.projectservice.service;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.Projection.IProjectFeed;
+import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

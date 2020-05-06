@@ -3,7 +3,7 @@ package com.collapporation.projectservice.controller;
 import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
-import com.collapporation.projectservice.models.Projection.IProject;
+import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,8 +30,8 @@ public class ProjectController {
     private final Logger logger = LoggerFactory.getLogger(ProjectController.class);
 
     @GetMapping("/{projectId}")
-    public ResponseEntity<IProject> getProject(@PathVariable("projectId") String projectId) {
-        final IProject project = projectService.getProject(projectId);
+    public ResponseEntity<Project> getProject(@PathVariable("projectId") String projectId) {
+        final ProjectDTO project = new ProjectDTO(projectService.getProject(projectId));
 
         if(project == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
