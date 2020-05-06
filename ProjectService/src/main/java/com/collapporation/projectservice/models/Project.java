@@ -65,7 +65,7 @@ public class Project
         title = project.getTitle();
         smallDescription = project.getSmallDescription();
         status = project.getStatus();
-        ownerId = project.getOwnerId();
+        ownerId = project.getOwner();
         img = project.getImg();
     }
 }

@@ -23,8 +23,8 @@ public class FeedController {
     private final FeedService feedService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<IProjectFeed>> getProjectfeeds(@Param("page") int page, @Param("size") int size){
-        List<IProjectFeed> projectFeed = feedService.getProjectFeed(page, size);
+    public ResponseEntity<List<ProjectFeedDTO>> getProjectfeeds(@Param("page") int page, @Param("size") int size){
+        List<ProjectFeedDTO> projectFeed = feedService.getProjectFeed(page, size);
 
         System.out.println(projectFeed.get(0));
 

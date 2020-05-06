@@ -3,6 +3,7 @@ package com.collapporation.projectservice.service;
 import com.collapporation.projectservice.config.RestConfig;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.Projection.IProjectFeed;
+import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import lombok.AllArgsConstructor;
@@ -20,12 +21,16 @@ public class FeedService {
 
     private final RestTemplate restTemplate;
 
-    public List<IProjectFeed> getProjectFeed(int page, int size){
+    public List<ProjectFeedDTO> getProjectFeed(int page, int size){
         Pageable pageable = PageRequest.of(page, size);
-        List<IProjectFeed> projectFeedList = projectRepo.findAllByOrderByCreatedDesc(pageable);
+        List<Project> projectList = projectRepo.findAllByOrderByCreatedDesc(pageable);
 
-        projectFeedList.stream().forEach(p -> {
-            p.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
+        List<ProjectFeedDTO> projectFeedList = new ArrayList<>();
+
+        projectList.stream().forEach(p -> {
+            ProjectFeedDTO projectFeedDTO = new ProjectFeedDTO(p);
+            projectFeedDTO.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
+            projectFeedList.add(projectFeedDTO);
         });
 
         projectFeedList.removeIf(Objects::isNull);
