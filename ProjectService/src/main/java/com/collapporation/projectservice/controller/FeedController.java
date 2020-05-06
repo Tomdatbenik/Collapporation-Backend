@@ -25,6 +25,8 @@ public class FeedController {
     public ResponseEntity<List<IProjectFeed>> getProjectfeeds(@Param("page") int page, @Param("size") int size){
         List<IProjectFeed> projectFeed = feedService.getProjectFeed(page, size);
 
+        System.out.println(projectFeed.get(0));
+
         return new ResponseEntity<>(projectFeed, HttpStatus.OK);
     }
 

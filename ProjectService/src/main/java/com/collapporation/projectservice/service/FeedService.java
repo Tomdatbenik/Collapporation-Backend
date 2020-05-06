@@ -10,10 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -27,8 +24,10 @@ public class FeedService {
         List<IProjectFeed> projectFeedList = projectRepo.findAllByOrderByCreatedDesc(pageable);
 
         projectFeedList.stream().forEach(p -> {
-            p.setOwnerId("hallo");
+            p.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
         });
+
+        projectFeedList.removeIf(Objects::isNull);
         return projectFeedList;
     }
 }
