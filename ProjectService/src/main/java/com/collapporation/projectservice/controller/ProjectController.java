@@ -58,4 +58,12 @@ public class ProjectController {
 
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @PutMapping("/update")
+    public ResponseEntity updateProject(@PathVariable("projectId") String projectId, @RequestBody Project project)
+    {
+
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }
