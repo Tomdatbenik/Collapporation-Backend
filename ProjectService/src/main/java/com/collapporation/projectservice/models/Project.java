@@ -1,6 +1,6 @@
 package com.collapporation.projectservice.models;
 
-import com.collapporation.projectservice.models.dto.BasicDTO;
+import com.collapporation.projectservice.models.Projection.IProject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,18 +9,15 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "project")
-public class Project
-{
+public class Project implements IProject {
     @Id
     @JsonProperty("id")
     @GeneratedValue(generator = "system-uuid")
@@ -63,13 +60,46 @@ public class Project
 
     //TODO think about this: UpdateTimestamp
 
-    public Project(BasicDTO project)
-    {
-        id = project.getId();
-        title = project.getTitle();
-        smallDescription = project.getSmallDescription();
-        status = project.getStatus();
-        ownerId = project.getOwnerId();
-        img = project.getImg();
+    @Transient
+    private List<Object> tags;
+    @Transient
+    private List<Object> links;
+    @Transient
+    private List<Object> collaborators;
+    @Transient
+    private List<Object> comments;
+    @Transient
+    private List<Object> likes;
+    @Transient
+    private List<Object> follows;
+
+    @Override
+    public List<Object> getTags() {
+        return tags;
+    }
+
+    @Override
+    public List<Object> getLinks() {
+        return links;
+    }
+
+    @Override
+    public List<Object> getCollaborators() {
+        return collaborators;
+    }
+
+    @Override
+    public List<Object> getComments() {
+        return comments;
+    }
+
+    @Override
+    public List<Object> getLikes() {
+        return likes;
+    }
+
+    @Override
+    public List<Object> getFollows() {
+        return follows;
     }
 }

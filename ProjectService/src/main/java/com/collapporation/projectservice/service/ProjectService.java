@@ -6,6 +6,7 @@ import com.collapporation.projectservice.event.ProjectUpdateStatusEvent;
 import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.models.Projection.IProject;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class ProjectService {
     @Autowired
     private IDispatcher dispatcher;
 
-    public Project getProject(String id){
+    public IProject getProject(String id){
         return projectRepo.findById(id).orElse(null);
     }
 
