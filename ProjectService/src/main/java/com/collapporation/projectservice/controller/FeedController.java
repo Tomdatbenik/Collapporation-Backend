@@ -1,5 +1,6 @@
 package com.collapporation.projectservice.controller;
 
+import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import com.collapporation.projectservice.service.FeedService;
 import lombok.AllArgsConstructor;
@@ -21,8 +22,8 @@ public class FeedController {
     private final FeedService feedService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<ProjectFeedDTO>> getProjectfeeds(@Param("page") int page, @Param("size") int size){
-        List<ProjectFeedDTO> projectFeed = feedService.getProjectFeed(page, size);
+    public ResponseEntity<List<Project>> getProjectfeeds(@Param("page") int page, @Param("size") int size){
+        List<Project> projectFeed = feedService.getProjectFeed(page, size);
         return new ResponseEntity<>(projectFeed, HttpStatus.OK);
     }
 }
