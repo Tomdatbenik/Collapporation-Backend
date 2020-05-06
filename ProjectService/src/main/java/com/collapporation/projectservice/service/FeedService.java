@@ -1,6 +1,7 @@
 package com.collapporation.projectservice.service;
 
 import com.collapporation.projectservice.models.Project;
+import com.collapporation.projectservice.models.Projection.IProjectFeed;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import lombok.AllArgsConstructor;
@@ -15,9 +16,8 @@ import java.util.List;
 public class FeedService {
     private final ProjectRepo projectRepo;
 
-    public List<Project> getProjectFeed(int page, int size){
+    public List<IProjectFeed> getProjectFeed(int page, int size){
         Pageable pageable = PageRequest.of(page, size);
-        return projectRepo.findAll();
-        //return projectRepo.findAllByOrderByCreatedDesc(pageable);
+        return projectRepo.findAllByOrderByCreatedDesc(pageable);
     }
 }

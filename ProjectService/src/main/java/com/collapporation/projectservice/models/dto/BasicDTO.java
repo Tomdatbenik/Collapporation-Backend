@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class BasicDTO {
-
     public BasicDTO(Project project) {
         id = project.getId();
         title = project.getTitle();

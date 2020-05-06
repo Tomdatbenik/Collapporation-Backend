@@ -2,6 +2,7 @@ package com.collapporation.projectservice.repo;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.models.Projection.IProjectFeed;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,7 +15,7 @@ import java.util.List;
 @Repository
 public interface ProjectRepo extends JpaRepository<Project, String> {
 
-    List<ProjectFeedDTO> findAllByOrderByCreatedDesc(Pageable pageable);
+    List<IProjectFeed> findAllByOrderByCreatedDesc(Pageable pageable);
 
     @Modifying
     @Query("UPDATE project p SET p.status = :newStatus WHERE p.id = :id")
