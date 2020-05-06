@@ -15,6 +15,10 @@ spring:
       bootstrap-servers: tomdatbenik.nl:9092
     producer:
       bootstrap-servers: tomdatbenik.nl:9092
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
 server:
   port: 8094
