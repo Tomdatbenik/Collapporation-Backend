@@ -47,17 +47,3 @@ public class UserControllerTests {
                 .andExpect(status().is(HttpStatus.NOT_FOUND.value()));
     }
 }
-
-//    // <editor-fold defaultstate="collapsed" desc="UserController">
-//    @Test
-//    public void addUserCorrectly() throws Exception {
-//        MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/user/adduser")
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(gson.toJson(user))
-//                .accept(MediaType.APPLICATION_JSON))
-//                .andExpect(status().is(200)).andReturn();
-//
-//        String expectedResult = "{\"responseCode\":\"Done\",\"responseDescription\":\"Everything went correctly\"}";
-//
-//        Assert.assertEquals(expectedResult, result.getResponse().getContentAsString());
-//    }
