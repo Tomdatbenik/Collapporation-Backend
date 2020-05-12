@@ -32,9 +32,16 @@ public class User {
     @Column(name = "lastname")
     private String lastName;
     @Length(min = 0, max = 2147483647)
-    @Column(name = "bio")
+    @Column(name = "bio", columnDefinition = "Text")
     private String bio;
     @URL
     @Column(name = "picture")
     private String picture;
+//    private String functionTitle;
+//    private String email;
 }
+//tags
+//links
+//projects
+
+//user -> user name, image, id, role
