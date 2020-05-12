@@ -68,7 +68,7 @@ public class ProjectFeedDTOTest {
     public void getSmallDescription(){
         String projectSmallDescription = projectFeedDTO.getSmallDescription();
 
-        String expected = "testSmallDescription";
+        String expected = "testSmalldescription";
 
         assertThat(projectSmallDescription).isEqualTo(expected);
     }
@@ -108,7 +108,7 @@ public class ProjectFeedDTOTest {
     public void getImg(){
         String projectImg = projectFeedDTO.getImg();
 
-        String expected = "testImg";
+        String expected = "testImage";
 
         assertThat(projectImg).isEqualTo(expected);
     }

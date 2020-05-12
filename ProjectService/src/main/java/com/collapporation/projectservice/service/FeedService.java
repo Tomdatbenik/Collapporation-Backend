@@ -29,7 +29,13 @@ public class FeedService {
 
         projectList.stream().forEach(p -> {
             ProjectFeedDTO projectFeedDTO = new ProjectFeedDTO(p);
-            projectFeedDTO.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
+            try{
+                //TODO get user or group instead of always trying to get a user
+                projectFeedDTO.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
+            }
+            catch (Exception ex) {
+                projectFeedDTO.setOwner("{ name: 'no user could be found' }");
+            }
             projectFeedList.add(projectFeedDTO);
         });
 
