@@ -1,0 +1,69 @@
+package com.collapporation.projectservice.handler.method;
+
+import com.collapporation.projectservice.event.ProjectCreatedEvent;
+import com.collapporation.projectservice.models.Project;
+import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.repo.ProjectRepo;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.jdbc.Sql;
+import javax.transaction.Transactional;
+import java.time.LocalDateTime;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+@SpringBootTest
+@Sql(scripts = {"/test/project.sql"})
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
+public class CreateProjectEventHandlerMethodTest
+{
+    @Autowired
+    private ProjectRepo projectRepo;
+
+    @Test
+    void allArgsConstructorTest()
+    {
+        assertDoesNotThrow(() -> {
+            new CreateProjectEventHandleMethod(projectRepo);
+        });
+    }
+
+    @Test
+    public void handlingTypeTest() {
+        final CreateProjectEventHandleMethod createProjectEventHandleMethod = new CreateProjectEventHandleMethod(projectRepo);
+
+        assertThat(createProjectEventHandleMethod).isNotNull();
+        assertThat(createProjectEventHandleMethod.getHandlingType()).isEqualTo(ProjectCreatedEvent.class);
+    }
+
+    @Test
+    @Transactional
+    public void saveProjectTest()
+    {
+        final Project creatorProject = new Project();
+        creatorProject.setId("0");
+        creatorProject.setTitle("project0");
+        creatorProject.setSmallDescription("small description of project0");
+        creatorProject.setDescription("very large markdown description of project0");
+        creatorProject.setStatus(ProjectStatus.CONCEPT);
+        creatorProject.setImg("https://i.picsum.photos/id/823/510/300.jpg");
+        creatorProject.setOwnerId("0");
+        creatorProject.setCreated(LocalDateTime.now());
+
+        final CreateProjectEventHandleMethod createProjectEventHandleMethod = new CreateProjectEventHandleMethod(projectRepo);
+        final Project project = projectRepo.getOne(creatorProject.getId());
+
+        assertThat(project).isNotNull();
+        assertThat(project.getId()).isEqualTo(creatorProject.getId());
+        assertThat(project.getTitle()).isEqualTo(creatorProject.getTitle());
+        assertThat(project.getSmallDescription()).isEqualTo(creatorProject.getSmallDescription());
+        assertThat(project.getDescription()).isEqualTo(creatorProject.getDescription());
+        assertThat(project.getImg()).isEqualTo(creatorProject.getImg());
+        assertThat(project.getOwnerId()).isEqualTo(creatorProject.getOwnerId());
+        assertThat(project.getCreated()).isEqualTo(creatorProject.getCreated());
+
+        createProjectEventHandleMethod.handle(new ProjectCreatedEvent());
+    }
+}
