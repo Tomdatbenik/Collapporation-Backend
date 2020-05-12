@@ -1,5 +1,7 @@
 package com.collapporation.projectservice.models;
 
+import com.collapporation.projectservice.models.dto.ProjectDTO;
+import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -44,6 +46,58 @@ public class ProjectTests
         assertThat(project.getImg()).isEqualTo(image);
         assertThat(project.getCreated()).isEqualTo(localDateTime);
         assertThat(project.getOwnerId()).isEqualTo(ownerId);
+    }
+
+    @Test
+    public void projectDTOContructorTest()
+    {
+        ProjectDTO projectDTO = new ProjectDTO();
+        projectDTO.setId( "0");
+        projectDTO.setTitle("project0");
+        projectDTO.setStatus( ProjectStatus.CONCEPT);
+        projectDTO.setSmallDescription("Small description of project0.");
+        projectDTO.setImg("Cool image");
+        projectDTO.setOwnerId("0");
+        projectDTO.setCreated(LocalDateTime.now());
+
+
+        final Project project = new Project(projectDTO);
+
+        assertThat(project).isNotNull();
+        assertThat(project.getId()).isEqualTo(projectDTO.getId());
+        assertThat(project.getTitle()).isEqualTo(projectDTO.getTitle());
+        assertThat(project.getStatus()).isEqualTo(projectDTO.getStatus());
+        assertThat(project.getSmallDescription()).isEqualTo(projectDTO.getSmallDescription());
+        assertThat(project.getDescription()).isEqualTo("");
+        assertThat(project.getImg()).isEqualTo(projectDTO.getImg());
+        assertThat(project.getCreated()).isEqualTo(projectDTO.getCreated());
+        assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwnerId());
+    }
+
+    @Test
+    public void projectFeedDTOContructorTest()
+    {
+        ProjectFeedDTO projectDTO = new ProjectFeedDTO();
+        projectDTO.setId( "0");
+        projectDTO.setTitle("project0");
+        projectDTO.setStatus( ProjectStatus.CONCEPT);
+        projectDTO.setSmallDescription("Small description of project0.");
+        projectDTO.setImg("Cool image");
+        projectDTO.setOwnerId("0");
+        projectDTO.setCreated(LocalDateTime.now());
+
+
+        final Project project = new Project(projectDTO);
+
+        assertThat(project).isNotNull();
+        assertThat(project.getId()).isEqualTo(projectDTO.getId());
+        assertThat(project.getTitle()).isEqualTo(projectDTO.getTitle());
+        assertThat(project.getStatus()).isEqualTo(projectDTO.getStatus());
+        assertThat(project.getSmallDescription()).isEqualTo(projectDTO.getSmallDescription());
+        assertThat(project.getDescription()).isEqualTo("");
+        assertThat(project.getImg()).isEqualTo(projectDTO.getImg());
+        assertThat(project.getCreated()).isEqualTo(projectDTO.getCreated());
+        assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwnerId());
     }
 
     @Test

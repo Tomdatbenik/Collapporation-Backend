@@ -4,11 +4,13 @@ import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 public abstract class BasicDTO {
     public BasicDTO(Project project) {
         id = project.getId();

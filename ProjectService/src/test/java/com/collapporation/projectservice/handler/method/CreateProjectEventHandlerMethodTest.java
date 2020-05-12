@@ -11,6 +11,8 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
@@ -43,20 +45,21 @@ public class CreateProjectEventHandlerMethodTest
     public void saveProjectTest()
     {
         final Project creatorProject = new Project();
-        creatorProject.setId("0");
-        creatorProject.setTitle("project0");
+        creatorProject.setTitle("Test project");
         creatorProject.setSmallDescription("small description of project0");
         creatorProject.setDescription("very large markdown description of project0");
         creatorProject.setStatus(ProjectStatus.CONCEPT);
-        creatorProject.setImg("https://i.picsum.photos/id/823/510/300.jpg");
+        creatorProject.setImg("https://picsum.photos/test/510/300?random");
         creatorProject.setOwnerId("0");
         creatorProject.setCreated(LocalDateTime.now());
 
         final CreateProjectEventHandleMethod createProjectEventHandleMethod = new CreateProjectEventHandleMethod(projectRepo);
-        final Project project = projectRepo.getOne(creatorProject.getId());
+
+        createProjectEventHandleMethod.handle(new ProjectCreatedEvent(creatorProject));
+
+        final Project project = projectRepo.findAll().get( projectRepo.findAll().size()-1);
 
         assertThat(project).isNotNull();
-        assertThat(project.getId()).isEqualTo(creatorProject.getId());
         assertThat(project.getTitle()).isEqualTo(creatorProject.getTitle());
         assertThat(project.getSmallDescription()).isEqualTo(creatorProject.getSmallDescription());
         assertThat(project.getDescription()).isEqualTo(creatorProject.getDescription());
@@ -64,6 +67,5 @@ public class CreateProjectEventHandlerMethodTest
         assertThat(project.getOwnerId()).isEqualTo(creatorProject.getOwnerId());
         assertThat(project.getCreated()).isEqualTo(creatorProject.getCreated());
 
-        createProjectEventHandleMethod.handle(new ProjectCreatedEvent());
     }
 }

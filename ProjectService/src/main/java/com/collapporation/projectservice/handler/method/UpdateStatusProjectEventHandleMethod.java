@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UpdateStatusProjectEventHandleMethod extends HandlerMethod<ProjectUpdateStatusEvent> {
-    protected UpdateStatusProjectEventHandleMethod() {
-        super(ProjectUpdateStatusEvent.class);
-    }
-
-    @Autowired
     private ProjectRepo projectRepo;
+
+    protected UpdateStatusProjectEventHandleMethod(ProjectRepo repo) {
+        super(ProjectUpdateStatusEvent.class);
+        projectRepo = repo;
+    }
 
     @Override
     public void handle(ProjectUpdateStatusEvent event) {

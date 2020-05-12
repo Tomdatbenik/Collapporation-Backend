@@ -9,15 +9,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UpdateProjectEventHandleMethod extends HandlerMethod<ProjectUpdateEvent> {
-    protected UpdateProjectEventHandleMethod() {
-        super(ProjectUpdateEvent.class);
-    }
 
-    @Autowired
     private ProjectRepo projectRepo;
+
+    public UpdateProjectEventHandleMethod(ProjectRepo projectRepo) {
+        super(ProjectUpdateEvent.class);
+        this.projectRepo = projectRepo;
+    }
 
     @Override
     public void handle(ProjectUpdateEvent event) {
-        projectRepo.update(event.getProject().getId(),event.getProject());
+        projectRepo.save(event.getProject());
     }
 }

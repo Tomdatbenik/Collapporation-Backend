@@ -1,12 +1,9 @@
 package com.collapporation.projectservice.controller;
 
-import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +12,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 
 @CrossOrigin
 @RestController
@@ -47,9 +48,16 @@ public class ProjectController {
     @PostMapping("/create")
     public ResponseEntity createProject(@RequestBody Project project)
     {
-        projectService.createProject(project);
+        String errors = validateProject(project);
 
-        return new ResponseEntity(HttpStatus.OK);
+        if(errors == null)
+        {
+            projectService.createProject(project);
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
+        }
     }
 
     @PutMapping("/update/status")
@@ -63,8 +71,38 @@ public class ProjectController {
     @PutMapping("/update")
     public ResponseEntity updateProject(@RequestBody Project project)
     {
-        projectService.update(project);
+        String errors = validateProject(project);
 
-        return new ResponseEntity(HttpStatus.OK);
+        if(errors == null)
+        {
+            projectService.update(project);
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+    }
+
+    private String validateProject(Project project)
+    {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+
+        Set<ConstraintViolation<Project>> errors = validator.validate(project);
+
+        if(errors.size() == 0)
+        {
+            return null;
+        }
+        else {
+
+            AtomicReference<String> errorText = new AtomicReference<>("");
+
+            errors.stream().forEach(e->{
+                errorText.set(errorText.get() + e.getPropertyPath() + " " +  e.getMessage()  + "\n");
+            });
+
+            return errorText.get();
+        }
     }
 }

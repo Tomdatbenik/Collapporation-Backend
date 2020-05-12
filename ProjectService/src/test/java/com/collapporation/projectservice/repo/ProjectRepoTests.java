@@ -26,7 +26,7 @@ public class ProjectRepoTests
         final String id = "0";
         final ProjectStatus projectStatus = ProjectStatus.PROJECT;
 
-        projectRepo.updateStatus(projectStatus, id);
+        projectRepo.updateStatus(id,projectStatus);
         final Project project = projectRepo.getOne(id);
 
         assertThat(project).isNotNull();

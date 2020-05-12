@@ -34,7 +34,7 @@ public class EventHandlerTests
     public void processEventTest(){
         final Project creatorProject = new Project();
         creatorProject.setId("0");
-        creatorProject.setTitle("project0");
+        creatorProject.setTitle("Procces event test project0");
         creatorProject.setSmallDescription("small description of project0");
         creatorProject.setDescription("very large markdown description of project0");
         creatorProject.setStatus(ProjectStatus.CONCEPT);
@@ -55,8 +55,11 @@ public class EventHandlerTests
         assertThat(project.getCreated()).isEqualTo(creatorProject.getCreated());
     }
 
+    //Test class created for process Unkown Event Test
     private class UnknownEvent extends Event
-    {}
+    {
+
+    }
 
     @Test
     public void processUnknownEventTest() {
