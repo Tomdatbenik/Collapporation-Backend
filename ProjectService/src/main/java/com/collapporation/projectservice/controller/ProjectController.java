@@ -34,7 +34,7 @@ public class ProjectController {
     public ResponseEntity<Project> getProject(@PathVariable("projectId") String projectId) {
         final Project project = projectService.getProject(projectId);
         ProjectDTO projectDTO = new ProjectDTO(project);
-        
+
         if(project == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
