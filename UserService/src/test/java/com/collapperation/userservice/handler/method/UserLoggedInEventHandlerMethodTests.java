@@ -17,17 +17,22 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 @SpringBootTest
 @Sql(scripts = {"/test/user.sql"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class UserLoggedInEventHandlerMethodTests {
+public class UserLoggedInEventHandlerMethodTests
+{
     @Autowired
     private UserRepo userRepo;
 
     @Test
-    public void allArgsConstructorTest(){
-        assertDoesNotThrow(() -> {new UserLoggedInEventHandlerMethod(userRepo);});
+    public void allArgsConstructorTest()
+    {
+        assertDoesNotThrow(() -> {
+            new UserLoggedInEventHandlerMethod(userRepo);
+        });
     }
 
     @Test
-    public void handlingTypeTest(){
+    public void handlingTypeTest()
+    {
         final UserLoggedInEventHandlerMethod userLoggedInEventHandlerMethod = new UserLoggedInEventHandlerMethod(userRepo);
 
         assertThat(userLoggedInEventHandlerMethod).isNotNull();
@@ -36,7 +41,8 @@ public class UserLoggedInEventHandlerMethodTests {
 
     @Test
     @Transactional
-    public void updatesUserBasicInfoTest(){
+    public void updateBasicUserInfoTest()
+    {
         final String id = "0";
         final String username = "new userName";
         final String picture = "new picture";

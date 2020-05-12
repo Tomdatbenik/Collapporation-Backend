@@ -7,16 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CreateProjectEventHandleMethod extends HandlerMethod<ProjectCreatedEvent> {
-    protected CreateProjectEventHandleMethod() {
+public class CreateProjectEventHandleMethod extends HandlerMethod<ProjectCreatedEvent>
+{
+    private final ProjectRepo projectRepo;
+
+    public CreateProjectEventHandleMethod(ProjectRepo projectRepo)
+    {
         super(ProjectCreatedEvent.class);
+        this.projectRepo = projectRepo;
     }
 
-    @Autowired
-    private ProjectRepo projectRepo;
-
     @Override
-    public void handle(ProjectCreatedEvent event) {
+    public void handle(ProjectCreatedEvent event)
+    {
         projectRepo.save(event.getProject());
     }
 }

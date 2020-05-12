@@ -27,7 +27,7 @@ public class Project
 
     @Column(name = "title")
     @JsonProperty("title")
-    @Length(min = 0, max = 255)
+    @Length(min = 2, max = 255)
     private String title;
 
     @Column(name = "smalldescription")
@@ -67,5 +67,7 @@ public class Project
         status = project.getStatus();
         ownerId = project.getOwner();
         img = project.getImg();
+        created = project.getCreated();
+        description = "";
     }
 }
