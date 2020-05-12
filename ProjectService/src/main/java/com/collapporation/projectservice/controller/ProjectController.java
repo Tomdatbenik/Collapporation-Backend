@@ -32,8 +32,9 @@ public class ProjectController {
 
     @GetMapping("/{projectId}")
     public ResponseEntity<Project> getProject(@PathVariable("projectId") String projectId) {
-        final ProjectDTO project = new ProjectDTO(projectService.getProject(projectId));
-
+        final Project project = projectService.getProject(projectId);
+        ProjectDTO projectDTO = new ProjectDTO(project);
+        
         if(project == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -42,7 +43,9 @@ public class ProjectController {
             //TODO fill project with tags links comments etc.
         }
 
-        return new ResponseEntity(project, HttpStatus.OK);
+
+
+        return new ResponseEntity(projectDTO, HttpStatus.OK);
     }
 
     @PostMapping("/create")
