@@ -5,6 +5,8 @@ import com.collapperation.userservice.handler.HandlerMethod;
 import com.collapperation.userservice.repo.UserRepo;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
+
 @Component
 public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEvent> {
     private final UserRepo userRepo;
@@ -15,6 +17,7 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
     }
 
     @Override
+    @Transactional
     public void handle(UserLoggedInEvent event) {
         userRepo.updateBasicUserInfo(
                 event.getPicture(),
