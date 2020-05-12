@@ -13,6 +13,8 @@ spring:
   kafka:
     consumer:
       bootstrap-servers: tomdatbenik.nl:9092
+    producer:
+      bootstrap-servers: tomdatbenik.nl:9092
 
 server:
   port: 8094
