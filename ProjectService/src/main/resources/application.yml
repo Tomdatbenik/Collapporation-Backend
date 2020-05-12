@@ -2,17 +2,24 @@ spring:
   profiles:
     active:
   application:
-    name: projectservice-service
+    name: project-service
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;
     driver-class-name: org.h2.Driver
     username: sa
-    password: password
+    password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
   kafka:
     consumer:
       bootstrap-servers: tomdatbenik.nl:9092
+    producer:
+      bootstrap-servers: tomdatbenik.nl:9092
+    topic: project
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
 server:
   port: 8094
