@@ -1,11 +1,11 @@
-package com.collapperation.userservice.handler.method;
+package com.collapporation.projectservice.handler.method;
 
-import com.collapperation.userservice.event.UserLoggedInEvent;
+import com.collapporation.projectservice.event.ProjectCreatedEvent;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-public class UnrecognizedEventHandlerMethodTests
+public class UnrecognizedEventHandlerMethodTest
 {
     @Test
     public void noArgsConstructorTest()
@@ -19,6 +19,6 @@ public class UnrecognizedEventHandlerMethodTests
     public void handleTest()
     {
         final UnrecognizedEventHandlerMethod handlerMethod = new UnrecognizedEventHandlerMethod();
-        assertDoesNotThrow(() -> handlerMethod.handle(new UserLoggedInEvent()));
+        assertDoesNotThrow(() -> handlerMethod.handle(new ProjectCreatedEvent()));
     }
 }

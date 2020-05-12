@@ -14,13 +14,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @Sql(scripts = "/test/user.sql")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class UserRepoTests {
+public class UserRepoTests
+{
     @Autowired
     private UserRepo userRepo;
 
     @Test
     @Transactional
-    public void updateBasicUserInfoTest(){
+    public void updateBasicUserInfoTest()
+    {
         final String id = "0";
         final String username = "new userName";
         final String picture = "new picture";

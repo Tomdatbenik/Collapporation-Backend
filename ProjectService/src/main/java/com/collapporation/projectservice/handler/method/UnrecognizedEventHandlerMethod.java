@@ -7,15 +7,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UnrecognizedEventHandlerMethod extends HandlerMethod<Event> {
+public class UnrecognizedEventHandlerMethod extends HandlerMethod<Event>
+{
     private final Logger logger = LoggerFactory.getLogger(UnrecognizedEventHandlerMethod.class);
 
-    protected UnrecognizedEventHandlerMethod() {
+    protected UnrecognizedEventHandlerMethod()
+    {
         super(Event.class);
     }
 
     @Override
-    public void handle(Event event) {
+    public void handle(Event event)
+    {
         logger.info("could not find: {}", event.getClass().getSimpleName());
     }
 }
