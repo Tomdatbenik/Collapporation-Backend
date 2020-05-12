@@ -19,7 +19,7 @@ public class ProjectDTO extends BasicDTO{
             smallDescription = project.getSmallDescription();
             status = project.getStatus();
             img = project.getImg();
-            ownerId = project.getOwnerId();
+            owner = project.getOwnerId();
             created = project.getCreated();
         }
     }

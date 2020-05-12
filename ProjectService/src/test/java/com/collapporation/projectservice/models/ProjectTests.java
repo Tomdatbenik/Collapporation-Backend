@@ -57,7 +57,7 @@ public class ProjectTests
         projectDTO.setStatus( ProjectStatus.CONCEPT);
         projectDTO.setSmallDescription("Small description of project0.");
         projectDTO.setImg("Cool image");
-        projectDTO.setOwnerId("0");
+        projectDTO.setOwner("0");
         projectDTO.setCreated(LocalDateTime.now());
 
 
@@ -71,7 +71,7 @@ public class ProjectTests
         assertThat(project.getDescription()).isEqualTo("");
         assertThat(project.getImg()).isEqualTo(projectDTO.getImg());
         assertThat(project.getCreated()).isEqualTo(projectDTO.getCreated());
-        assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwnerId());
+        assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwner());
     }
 
     @Test
@@ -83,7 +83,7 @@ public class ProjectTests
         projectDTO.setStatus( ProjectStatus.CONCEPT);
         projectDTO.setSmallDescription("Small description of project0.");
         projectDTO.setImg("Cool image");
-        projectDTO.setOwnerId("0");
+        projectDTO.setOwner("0");
         projectDTO.setCreated(LocalDateTime.now());
 
 
@@ -97,7 +97,7 @@ public class ProjectTests
         assertThat(project.getDescription()).isEqualTo("");
         assertThat(project.getImg()).isEqualTo(projectDTO.getImg());
         assertThat(project.getCreated()).isEqualTo(projectDTO.getCreated());
-        assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwnerId());
+        assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwner());
     }
 
     @Test
