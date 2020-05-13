@@ -37,7 +37,8 @@ public class User {
     @URL
     @Column(name = "picture")
     private String picture;
-//    private String functionTitle;
+    @Column(name = "functiontitle")
+    private String functionTitle;
 //    private String email;
 }
 //tags

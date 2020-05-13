@@ -37,7 +37,7 @@ public class UserControllerTests {
                 MockMvcRequestBuilders.get("/user/0")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("{\"id\":\"0\",\"username\":\"user0user\",\"firstName\":\"user0\",\"lastName\":\"0user\",\"bio\":\"a bio0\",\"picture\":\"https://picsum.photos/510/300?random\"}")));
+                .andExpect(content().string(equalTo("{\"id\":\"0\",\"username\":\"user0user\",\"firstName\":\"user0\",\"lastName\":\"0user\",\"bio\":\"a bio0\",\"picture\":\"https://picsum.photos/510/300?random\",\"functionTitle\":\"job0\"}")));
     }
 
     @Test

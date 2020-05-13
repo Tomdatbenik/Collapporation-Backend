@@ -27,7 +27,8 @@ public class UserTests {
         final String lastName = "ddvyweydu2";
         final String picture = "https://picsum.photos/510/300?random";
         final String userName = "ebyufvcyuyui hchewbhhbuvhbu";
-        final User user = new User(id, userName, firstName, lastName, bio, picture);
+        final String functionTitle = "some job";
+        final User user = new User(id, userName, firstName, lastName, bio, picture, functionTitle);
 
         assertThat(user).isNotNull();
         assertThat(user.getUsername()).isEqualTo(userName);
@@ -36,6 +37,7 @@ public class UserTests {
         assertThat(user.getFirstName()).isEqualTo(firstName);
         assertThat(user.getId()).isEqualTo(id);
         assertThat(user.getBio()).isEqualTo(bio);
+        assertThat(user.getFunctionTitle()).isEqualTo(functionTitle);
     }
 
     @Test
