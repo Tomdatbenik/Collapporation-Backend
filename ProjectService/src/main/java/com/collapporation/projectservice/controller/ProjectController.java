@@ -19,7 +19,6 @@ import javax.validation.ValidatorFactory;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
-@CrossOrigin
 @RestController
 @AllArgsConstructor
 @RequestMapping("/project")

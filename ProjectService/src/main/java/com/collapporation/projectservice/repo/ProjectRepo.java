@@ -15,7 +15,7 @@ import java.util.List;
 @Repository
 public interface ProjectRepo extends JpaRepository<Project, String> {
 
-    List<IProjectFeed> findAllByOrderByCreatedDesc(Pageable pageable);
+    List<Project> findAllByOrderByCreatedDesc(Pageable pageable);
 
     @Modifying
     @Query("UPDATE project p SET p.status = :newStatus WHERE p.id = :id")
