@@ -2,6 +2,7 @@ package com.collapporation.projectservice.models.dto;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public abstract class BasicDTO {
     protected String smallDescription;
     protected ProjectStatus status;
     protected String img;
+    @JsonRawValue
     protected String owner;
     protected LocalDateTime created;
 }
