@@ -30,7 +30,7 @@ script:
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../token
- - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=tokenservcie
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=tokenservice
  - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
