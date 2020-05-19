@@ -15,7 +15,7 @@ spring:
       bootstrap-servers: tomdatbenik.nl:9092
     producer:
       bootstrap-servers: tomdatbenik.nl:9092
-    topic: like-0
+    topic: like
   h2:
     console:
       enabled: true
