@@ -20,22 +20,22 @@ script:
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=Tomdatbenik_Collapporation-Backend
  #Copy lines for a new subfolder to build and push dockerfile
  - cd Eureka
- - mvn clean install
- - docker build -t docker.io/$DOCKER_NAME/collaporation-eureka:latest .
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=discoveryservice
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-discoveryservice:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../Gateway
- - mvn clean install
- - docker build -t docker.io/$DOCKER_NAME/collaporation-gateway:latest .
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=gatewayservice
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-gatewayservice:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../token
- - mvn clean install
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=tokenservcie
  - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
  - cd ../UserService
- - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=Tomdatbenik_Collapporation-userservice
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=userservice
  - docker build -t docker.io/$DOCKER_NAME/collaporation-userservice:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
