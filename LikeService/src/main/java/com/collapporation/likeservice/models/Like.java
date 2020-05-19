@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "project")
+@Entity(name = "like")
 public class Like {
 
     @Id
@@ -25,10 +25,10 @@ public class Like {
     private String id;
 
     @JsonProperty("object_id")
-    @Column(name = "object_id", unique = true)
+    @Column(name = "object_id")
     private String object_id;
 
     @JsonProperty("liked_by_id")
-    @Column(name = "liked_by_id", unique = true)
+    @Column(name = "liked_by_id")
     private String liked_by_id;
 }
