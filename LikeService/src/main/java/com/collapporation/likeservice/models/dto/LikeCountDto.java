@@ -12,11 +12,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LikeCountDto extends BasicDTO{
 
-    public LikeCountDto(Like like) {
-        super(like);
-        object_id = like.getObject_id();
+    public LikeCountDto(String object_id) {
+        object_id = object_id;
     }
 
     private String object_id;
-    private int count;
+    private long count;
 }

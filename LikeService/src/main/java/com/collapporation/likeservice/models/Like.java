@@ -16,7 +16,6 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Entity(name = "like")
 public class Like {
-
     @Id
     @JsonProperty("id")
     @GeneratedValue(generator = "system-uuid")
