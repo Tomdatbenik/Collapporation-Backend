@@ -19,29 +19,29 @@ install:
 script:
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=Tomdatbenik_Collapporation-Backend
  #Copy lines for a new subfolder to build and push dockerfile
-# - cd Eureka
-# - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=discoveryservice
-# - docker build -t docker.io/$DOCKER_NAME/collaporation-discoveryservice:latest .
-# #End of needed copy
-# #Copy lines for a new subfolder to build and push dockerfile
-# - cd ../Gateway
-# - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=gatewayservice
-# - docker build -t docker.io/$DOCKER_NAME/collaporation-gatewayservice:latest .
-# #End of needed copy
-# #Copy lines for a new subfolder to build and push dockerfile
-# - cd ../token
-# - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=tokenservice
-# - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
+ - cd $TRAVIS_BUILD_DIR/Eureka
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=discoveryservice
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-discoveryservice:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
- - cd UserService
+ - cd $TRAVIS_BUILD_DIR/Gateway
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=gatewayservice
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-gatewayservice:latest .
+ #End of needed copy
+ #Copy lines for a new subfolder to build and push dockerfile
+ - cd $TRAVIS_BUILD_DIR/token
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=tokenservice
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-token:latest .
+ #End of needed copy
+ #Copy lines for a new subfolder to build and push dockerfile
+ - cd $TRAVIS_BUILD_DIR/UserService
  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=userservice
  - docker build -t docker.io/$DOCKER_NAME/collaporation-userservice:latest .
  #End of needed copy
  #Copy lines for a new subfolder to build and push dockerfile
-# - cd ../ProjectService
-# - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=projectservice
-# - docker build -t docker.io/$DOCKER_NAME/collaporation-projectservice:latest .
+ - cd $TRAVIS_BUILD_DIR/ProjectService
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=projectservice
+ - docker build -t docker.io/$DOCKER_NAME/collaporation-projectservice:latest .
  #End of needed copy
 # #Copy lines for a new subfolder to build and push dockerfile
 # - cd ../TemplateService
