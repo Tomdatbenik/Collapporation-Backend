@@ -2,11 +2,11 @@ package com.collapporation.likeservice.controller;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.collapporation.likeservice.models.Like;
-import com.collapporation.likeservice.models.LikeCollection;
 import com.collapporation.likeservice.models.dto.LikeCountDto;
 import com.collapporation.likeservice.models.dto.LikeDto;
 import com.collapporation.likeservice.service.LikeService;
 import com.collapporation.likeservice.token.TokenValidator;
+import com.collapporation.likeservice.models.LikeCollection;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,11 +21,11 @@ public class LikeController {
     private final TokenValidator tokenValidator;
 
     @PostMapping("/like")
-        public ResponseEntity createLike(@RequestBody LikeDto likeDto, @RequestHeader("Authorization") String token)
+    public ResponseEntity createLike(@RequestBody LikeDto likeDto, @RequestHeader("Authorization") String token)
     {
         final DecodedJWT decodedJWT = tokenValidator.verify(token);
 
-        final String uuid = decodedJWT.getClaim("uuid").toString();
+        final String uuid = decodedJWT.getClaim("uuid").asString();
 
         if(likeService.hasAlreadyLiked(uuid))
         {

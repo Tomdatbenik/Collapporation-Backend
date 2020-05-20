@@ -1,9 +1,9 @@
 package com.collapporation.likeservice.handler.method;
 
 import com.collapporation.likeservice.event.LikeValidatedEvent;
+import com.collapporation.likeservice.repo.LikeRepo;
 import com.collapporation.likeservice.handler.HandlerMethod;
 import com.collapporation.likeservice.models.Like;
-import com.collapporation.likeservice.repo.LikeRepo;
 import org.springframework.stereotype.Component;
 
 @Component
