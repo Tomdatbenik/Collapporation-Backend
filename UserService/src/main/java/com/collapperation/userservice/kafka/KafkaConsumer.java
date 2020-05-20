@@ -19,4 +19,10 @@ public class KafkaConsumer {
         logger.info("received event");
         eventHandler.processEvent(event);
     }
+
+    @KafkaListener(topics = "like-validation", groupId = "${spring.application.name}")
+    public void consumeLikeValidation(Event event){
+        logger.info("received event from like-validation topic");
+        eventHandler.processEvent(event);
+    }
 }

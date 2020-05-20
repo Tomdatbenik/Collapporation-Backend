@@ -32,3 +32,10 @@ eureka:
       defaultZone: "${EUREKA_URI:http://localhost:8101/eureka}"
     instance:
       preferIpAddress: true
+
+collapporation:
+  token:
+    issuer: collapperation-token-service
+    lifeSpan: 60
+    publicKey: publicKey.pem
+    privateKey: privateKey.pem

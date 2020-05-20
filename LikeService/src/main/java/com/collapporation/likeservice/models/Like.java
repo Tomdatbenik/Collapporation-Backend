@@ -1,5 +1,6 @@
 package com.collapporation.likeservice.models;
 
+import com.collapporation.likeservice.models.dto.LikeDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,6 @@ import javax.persistence.*;
 @Entity(name = "like")
 @Table(name = "like_table")
 public class Like {
-
     @Id
     @JsonProperty("id")
     @GeneratedValue(generator = "system-uuid")
@@ -29,4 +29,15 @@ public class Like {
     @JsonProperty("liked_by_id")
     @Column(name = "liked_by_id")
     private String liked_by_id;
+
+    public Like(String object_id, String liked_by_id) {
+        this.object_id = object_id;
+        this.liked_by_id = liked_by_id;
+    }
+
+    public Like(LikeDto likeDto)
+    {
+        this.liked_by_id = likeDto.getLiked_by_id();
+        this.object_id = likeDto.getObject_id();
+    }
 }

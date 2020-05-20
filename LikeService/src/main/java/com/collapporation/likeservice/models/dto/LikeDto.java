@@ -5,16 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class LikeCountDto extends BasicDTO{
-
-    public LikeCountDto(String object_id) {
-        object_id = object_id;
-    }
-
+public class LikeDto {
     private String object_id;
-    private long count;
+
+    private String liked_by_id;
 }

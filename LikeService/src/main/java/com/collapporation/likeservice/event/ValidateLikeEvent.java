@@ -1,6 +1,5 @@
 package com.collapporation.likeservice.event;
 
-import com.collapporation.likeservice.models.Like;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LikeCreatedEvent extends Event{
-    private Like like;
+public class ValidateLikeEvent extends Event{
+    private String object_id;
+    private String liked_by_id;
 }
