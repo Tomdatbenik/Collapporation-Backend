@@ -52,15 +52,15 @@ script:
 # add line to after_success if another docker image is created above(as many docker push lines as copy till end copy code)
 after_success:
  - docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
- - cd ../Eureka
+ - cd $TRAVIS_BUILD_DIR/Eureka
  - docker push docker.io/$DOCKER_NAME/collaporation-eureka:latest
- - cd ../Gateway
+ - cd $TRAVIS_BUILD_DIR/Gateway
  - docker push docker.io/$DOCKER_NAME/collaporation-gateway:latest
- - cd ../token
+ - cd $TRAVIS_BUILD_DIR/token
  - docker push docker.io/$DOCKER_NAME/collaporation-token:latest
- - cd ../UserService
+ - cd $TRAVIS_BUILD_DIR/UserService
  - docker push docker.io/$DOCKER_NAME/collaporation-userservice:latest
- - cd ../ProjectService
+ - cd $TRAVIS_BUILD_DIR/ProjectService
  - docker push docker.io/$DOCKER_NAME/collaporation-projectservice:latest
 # - cd ../TemplateService
 # - docker push docker.io/$DOCKER_NAME/collaporation-templateservice:latest
