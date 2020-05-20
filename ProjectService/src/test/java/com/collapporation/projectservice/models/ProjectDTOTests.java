@@ -3,13 +3,18 @@ package com.collapporation.projectservice.models;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
+import java.sql.Blob;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProjectDTOTests
 {
+    @Mock
+    protected Blob blob;
+
     @Test
     public void noArgsContructorTest()
     {
@@ -33,7 +38,7 @@ public class ProjectDTOTests
         project.setTitle("project0");
         project.setStatus( ProjectStatus.CONCEPT);
         project.setSmallDescription("Small description of project0.");
-        project.setImg("Cool image");
+        project.setImg(new byte[] {1});
         project.setOwnerId("0");
         project.setCreated(LocalDateTime.now());
 

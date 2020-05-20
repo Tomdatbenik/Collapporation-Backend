@@ -6,12 +6,14 @@ import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
 
 import javax.transaction.Transactional;
+import java.sql.Blob;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,6 +26,9 @@ public class UpdateProjectEventHandlerMethodTest
 {
     @Autowired
     private ProjectRepo projectRepo;
+
+    @Mock
+    protected Blob blob;
 
     @Test
     void AllArgsConstructorTest()
@@ -51,7 +56,7 @@ public class UpdateProjectEventHandlerMethodTest
         updateProject.setSmallDescription("Updated small description of project0");
         updateProject.setDescription("Updated very large markdown description of project0");
         updateProject.setStatus(ProjectStatus.CONCEPT);
-        updateProject.setImg("Updated https://picsum.photos/test/510/300?random");
+        updateProject.setImg(new byte[] {1});
         updateProject.setOwnerId("0");
         updateProject.setCreated(LocalDateTime.now());
 

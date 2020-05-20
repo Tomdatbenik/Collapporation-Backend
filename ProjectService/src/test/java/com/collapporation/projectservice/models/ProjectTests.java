@@ -3,11 +3,17 @@ package com.collapporation.projectservice.models;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+import java.sql.Blob;
 import java.time.LocalDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProjectTests
 {
+    @Mock
+    protected Blob blob;
+
     @Test
     public void noArgsContructorTest()
     {
@@ -32,7 +38,7 @@ public class ProjectTests
         final ProjectStatus status = ProjectStatus.CONCEPT;
         final String smalldescription = "Small description of project0.";
         final String description = "Large markdown description of project0";
-        final String image = "cool image";
+        final byte[] image = new byte[] {1};
         final LocalDateTime localDateTime = LocalDateTime.now();
         final String ownerId = "0";
         final Project project = new Project(id, title, smalldescription, description, status, image, ownerId, localDateTime);
@@ -56,7 +62,7 @@ public class ProjectTests
         projectDTO.setTitle("project0");
         projectDTO.setStatus( ProjectStatus.CONCEPT);
         projectDTO.setSmallDescription("Small description of project0.");
-        projectDTO.setImg("Cool image");
+        projectDTO.setImg(new byte[] {1});
         projectDTO.setOwner("0");
         projectDTO.setCreated(LocalDateTime.now());
 
@@ -82,7 +88,7 @@ public class ProjectTests
         projectDTO.setTitle("project0");
         projectDTO.setStatus( ProjectStatus.CONCEPT);
         projectDTO.setSmallDescription("Small description of project0.");
-        projectDTO.setImg("Cool image");
+        projectDTO.setImg(new byte[] {1});
         projectDTO.setOwner("0");
         projectDTO.setCreated(LocalDateTime.now());
 

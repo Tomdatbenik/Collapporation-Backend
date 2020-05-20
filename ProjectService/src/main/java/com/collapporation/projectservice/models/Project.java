@@ -10,6 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.time.LocalDateTime;
 
 @Data
@@ -46,8 +47,9 @@ public class Project
 
     //TODO might give errors
     @JsonProperty("img")
-    @Column(name = "img", columnDefinition = "TEXT")
-    private String img;
+    @Column(name = "img", columnDefinition = "TEXT", length = 100000)
+    @Lob
+    private byte[] img;
 
     @Column(name = "ownerid")
     @JsonProperty("ownerId")

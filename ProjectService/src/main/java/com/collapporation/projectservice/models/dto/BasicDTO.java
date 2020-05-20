@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Blob;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -29,7 +30,7 @@ public abstract class BasicDTO {
     protected String title;
     protected String smallDescription;
     protected ProjectStatus status;
-    protected String img;
+    protected byte[] img;
     @JsonRawValue
     protected String owner;
     protected LocalDateTime created;

@@ -4,7 +4,6 @@ import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.models.dto.ProjectFeedDTO;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
@@ -20,7 +19,9 @@ public class ProjectFeedDTOTest {
 
     LocalDateTime localTime = LocalDateTime.now();
 
-    private Project project = new Project("testproject", "testtitle", "testSmalldescription", "testDescription", ProjectStatus.CONCEPT, "testImage", "testOwnerid", localTime);
+    protected byte[] byteArray = new byte[] {1};
+
+    private Project project = new Project("testproject", "testtitle", "testSmalldescription", "testDescription", ProjectStatus.CONCEPT, byteArray, "testOwnerid", localTime);
 
     private ProjectFeedDTO projectFeedDTO = new ProjectFeedDTO(project);
 
@@ -106,20 +107,20 @@ public class ProjectFeedDTOTest {
 
     @Test
     public void getImg(){
-        String projectImg = projectFeedDTO.getImg();
+        byte[] projectImg = projectFeedDTO.getImg();
 
-        String expected = "testImage";
+        byte[] expected = byteArray;
 
         assertThat(projectImg).isEqualTo(expected);
     }
 
     @Test
     public void setImg(){
-        projectFeedDTO.setImg("newTestImg");
+        projectFeedDTO.setImg(new byte[] {2});
 
-        String projectImg = projectFeedDTO.getImg();
+        byte[] projectImg = projectFeedDTO.getImg();
 
-        String expected = "newTestImg";
+        byte[] expected = new byte[] {2};
 
         assertThat(projectImg).isEqualTo(expected);
     }
