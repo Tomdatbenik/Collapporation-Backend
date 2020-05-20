@@ -29,7 +29,7 @@ public class LikeService {
     }
 
     public LikeCollection getLikeCollectionByObjectId(String object_id) {
-        return new LikeCollection(null, 0);
+        return new LikeCollection(repo.findAllByObject_id(object_id), repo.countByObjectId(object_id));
     }
 
 

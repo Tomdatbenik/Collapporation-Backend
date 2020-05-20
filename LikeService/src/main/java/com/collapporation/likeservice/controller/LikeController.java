@@ -25,7 +25,7 @@ public class LikeController {
 
 
     //TODO return something else when friends are implemented to see also liked it.
-    @PostMapping("/count")
+    @GetMapping("/count")
     public ResponseEntity getLikeCountDto(String object_id)
     {
         LikeCollection collection = likeService.getLikeCollectionByObjectId(object_id);
