@@ -2,6 +2,7 @@ package com.collapporation.projectservice.repo;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.repo.ProjectRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

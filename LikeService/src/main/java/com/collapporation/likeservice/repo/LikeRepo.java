@@ -17,9 +17,6 @@ public interface LikeRepo extends JpaRepository<Like, String> {
     @Query("SELECT l FROM like l WHERE l.object_id = :object_id")
     List<Like> findAllByObject_id(@Param("object_id") String object_id);
 
-    @Query("SELECT l FROM like l WHERE l.liked_by_id = :liked_by_id")
-    List<Like> findAllByLiked_By_Id(@Param("liked_by_id") String liked_by_id);
-
     @Query("SELECT l FROM like l WHERE l.object_id = :object_id AND l.liked_by_id = :liked_by_id ")
     Like getLikeByObjectAndLikedBy(@Param("object_id") String object_id,@Param("liked_by_id") String liked_by_id);
 }

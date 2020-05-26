@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Event {
-    private String creator = "${spring.application.name}";
+    private String creator = "like-service";
 }

@@ -1,5 +1,6 @@
 package com.collapporation.projectservice.event;
 
+import com.collapporation.projectservice.event.ProjectCreatedEvent;
 import com.collapporation.projectservice.models.Project;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,5 @@
 package com.collapporation.likeservice.token;
 
-
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.auth0.jwt.interfaces.JWTVerifier;
 import org.springframework.stereotype.Component;

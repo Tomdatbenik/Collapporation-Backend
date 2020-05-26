@@ -1,5 +1,6 @@
 package com.collapporation.projectservice.event;
 
+import com.collapporation.projectservice.event.ProjectUpdateStatusEvent;
 import com.collapporation.projectservice.models.ProjectStatus;
 import org.junit.jupiter.api.Test;
 

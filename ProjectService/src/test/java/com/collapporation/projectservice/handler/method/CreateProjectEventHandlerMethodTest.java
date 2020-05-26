@@ -1,6 +1,7 @@
 package com.collapporation.projectservice.handler.method;
 
 import com.collapporation.projectservice.event.ProjectCreatedEvent;
+import com.collapporation.projectservice.handler.method.CreateProjectEventHandleMethod;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.repo.ProjectRepo;

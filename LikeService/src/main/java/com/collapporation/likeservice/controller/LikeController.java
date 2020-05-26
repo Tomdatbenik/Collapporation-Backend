@@ -8,6 +8,7 @@ import com.collapporation.likeservice.service.LikeService;
 import com.collapporation.likeservice.token.TokenValidator;
 import com.collapporation.likeservice.models.LikeCollection;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/like")
 public class LikeController {
 
-    private LikeService likeService;
+    private final LikeService likeService;
     private final TokenValidator tokenValidator;
 
     @PostMapping("/like")

@@ -1,5 +1,6 @@
 package com.collapporation.likeservice.models.dto;
 
+import com.collapporation.likeservice.models.Like;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LikeDto {
+
+    public LikeDto(Like like) {
+        this.object_id = like.getObject_id();
+        this.liked_by_id = like.getLiked_by_id();
+    }
+
     private String object_id;
 
     private String liked_by_id;
