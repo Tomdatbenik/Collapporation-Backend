@@ -22,7 +22,7 @@ public class LikeValidateEventHandleMethod extends HandlerMethod<ValidateLikeEve
     @Override
     public void handle(ValidateLikeEvent event)
     {
-        if(userRepo.findById(event.getObject_id()) != null)
+        if(userRepo.findById(event.getObject_id()).orElse(null) != null)
         {
             LikeValidatedEvent likeValidatedEvent = new LikeValidatedEvent(event.getObject_id(),event.getLiked_by_id());
 

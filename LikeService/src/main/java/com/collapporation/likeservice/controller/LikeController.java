@@ -27,7 +27,7 @@ public class LikeController {
 
         final String uuid = decodedJWT.getClaim("uuid").asString();
 
-        if(likeService.hasAlreadyLiked(uuid))
+        if(likeService.hasAlreadyLiked(likeDto.getObject_id(),uuid))
         {
             Like like = likeService.getLikeByObjectAndLikedBy(likeDto.getObject_id(),likeDto.getLiked_by_id());
             likeService.deleteLike(like);

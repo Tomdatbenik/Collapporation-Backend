@@ -31,9 +31,9 @@ public class LikeService {
         return new LikeCollection(repo.findAllByObject_id(object_id), repo.countByObjectId(object_id));
     }
 
-    public boolean hasAlreadyLiked(String id)
+    public boolean hasAlreadyLiked(String object_id, String liked_by_id)
     {
-        return !repo.findAllByLiked_By_Id(id).isEmpty();
+        return repo.getLikeByObjectAndLikedBy(object_id ,liked_by_id) != null;
     }
 
     public Like getLikeByObjectAndLikedBy(String object_id ,String liked_by_id)
