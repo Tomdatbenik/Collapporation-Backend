@@ -35,7 +35,7 @@ public class LikeControllerTests {
     void likeSuccessfulTest() throws Exception {
         mockMvc.perform(
                 MockMvcRequestBuilders.post("/like/like").contentType(MediaType.APPLICATION_JSON)
-                        .header("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJ1c2VySW1hZ2UiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaEpzN1pqaXpVWGtWbXNZRFZlVmdyQ00xdjlvRHZIclNlOTJIYklKdyIsImlzcyI6ImNvbGxhcHBlcmF0aW9uLXRva2VuLXNlcnZpY2UiLCJleHAiOjE1OTA1MDIwOTYsInVzZXJOYW1lIjoiV29uZGVyZnVsUHVnaWxpc3QiLCJpYXQiOjE1OTA0OTg0OTYsInV1aWQiOiJmZlU2Z1pudU9maGpidjFlV09OMmJoVnV6azgzIiwianRpIjoiYTBjMmYxZDEtMGZkMC00YTgxLTgzZDItZjdkNzMwMTJmYzBmIn0.R6bZNJSrobIPa4eZ7AK_uaj1RMSe8xzsYVwV3A4nw3ZSofqpU81ZDaPYwy0kzbfuH86PkrMg4GCcaIXsJfmavDH_--EaJ9hdoUVka_7jhbA2hc14VdnFEYFELia2HvN_u8oZSv-6mqScpMDC7CiX7XYTQV2bN8iEyMDj_K976-0")
+                        .header("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJ1c2VySW1hZ2UiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaEpzN1pqaXpVWGtWbXNZRFZlVmdyQ00xdjlvRHZIclNlOTJIYklKdyIsImlzcyI6ImNvbGxhcHBlcmF0aW9uLXRva2VuLXNlcnZpY2UiLCJleHAiOjE1OTIwMzcyNTgsInVzZXJOYW1lIjoiV29uZGVyZnVsUHVnaWxpc3QiLCJpYXQiOjE1OTA1NjYwMjksInV1aWQiOiJmZlU2Z1pudU9maGpidjFlV09OMmJoVnV6azgzIiwianRpIjoiOWJlNWU5OTEtNzIzNi00Mjk2LWFhNjctN2FkMDM5NDczMjRkIn0.TYpspJtOQlgntNpxDnEHUGBUj8oyABBo4HfB8OElNDtf428KQTHj8uhPoMxKYaJDkFpo4FeZN3Wl66GiPhiYYVnEcupatliRRYadK3IklFD30FbJW9NLgRaFu3buZBpqXAu_tUIBC0Egb8jQT6ETipDr54_r3cQirmsNtU5RUls")
                         .content("{\"object_id\":\"1\",\"liked_by_id\":\"2\"}")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

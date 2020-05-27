@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 public class UnrecognizedEventHandlerMethodTest
 {
     @Test
-    public void noArgsConstructorTest()
+    void noArgsConstructorTest()
     {
         assertDoesNotThrow(() -> {
             new UnrecognizedEventHandlerMethod();
@@ -16,7 +16,7 @@ public class UnrecognizedEventHandlerMethodTest
     }
 
     @Test
-    public void handleTest()
+    void handleTest()
     {
         final UnrecognizedEventHandlerMethod handlerMethod = new UnrecognizedEventHandlerMethod();
         assertDoesNotThrow(() -> handlerMethod.handle(new LikeValidatedEvent()));

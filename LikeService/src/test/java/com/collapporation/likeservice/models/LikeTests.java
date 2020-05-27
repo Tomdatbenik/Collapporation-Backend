@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class LikeTests {
     @Test
-    public void noArgsContructorTest()
+    void noArgsContructorTest()
     {
         final Like like = new Like();
 
@@ -17,7 +17,7 @@ public class LikeTests {
     }
 
     @Test
-    public void allArgsContructorTest()
+    void allArgsContructorTest()
     {
         final Like like = new Like("1", "2", "3");
 
@@ -27,7 +27,7 @@ public class LikeTests {
     }
 
     @Test
-    public void likeDTOContructorTest()
+    void likeDTOContructorTest()
     {
         final LikeDto likeDto = new LikeDto("1", "2");
 
@@ -38,7 +38,7 @@ public class LikeTests {
     }
 
     @Test
-    public void equalsTest()
+    void equalsTest()
     {
         final Like likeA = new Like();
         final Like likeB = new Like();
@@ -47,7 +47,7 @@ public class LikeTests {
     }
 
     @Test
-    public void notEqualTest() {
+    void notEqualTest() {
         final Like likeA = new Like();
         final Like likeB = new Like();
 

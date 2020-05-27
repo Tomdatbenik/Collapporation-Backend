@@ -21,7 +21,7 @@ public class LikeRepoTests
 
     @Test
     @Transactional
-    public void getCountTest() {
+    void getCountTest() {
         long count = repo.countByObjectId("1");
 
         assertThat(count).isEqualTo(2);
@@ -29,7 +29,7 @@ public class LikeRepoTests
 
     @Test
     @Transactional
-    public void getLikeByObjectAndByLikeIdTest() {
+    void getLikeByObjectAndByLikeIdTest() {
         final Like like = repo.getLikeByObjectAndLikedBy("1","2");
 
         assertThat(like).isNotNull();

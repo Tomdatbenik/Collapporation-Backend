@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class LikeCollectionTests {
     @Test
-    public void noArgsContructorTest()
+    void noArgsContructorTest()
     {
         final LikeCollection likeCollection = new LikeCollection();
 
@@ -19,7 +19,7 @@ public class LikeCollectionTests {
     }
 
     @Test
-    public void allArgsContructorTest()
+    void allArgsContructorTest()
     {
         final LikeCollection likeCollection = new LikeCollection(new ArrayList<>(), 1);
 
@@ -41,7 +41,7 @@ public class LikeCollectionTests {
 //    }
 
     @Test
-    public void notEqualTest() {
+    void notEqualTest() {
         final LikeCollection likeCollectionA = new LikeCollection(new ArrayList<>(), 1);
         final LikeCollection likeCollectionB = new LikeCollection();
 

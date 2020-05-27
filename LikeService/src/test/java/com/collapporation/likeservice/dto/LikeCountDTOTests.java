@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class LikeCountDTOTests {
     @Test
-    public void noArgsContructorTest()
+    void noArgsContructorTest()
     {
         final LikeCountDto likeCountDto = new LikeCountDto();
 
@@ -18,7 +18,7 @@ public class LikeCountDTOTests {
     }
 
     @Test
-    public void allArgsContructorTest()
+    void allArgsContructorTest()
     {
         final LikeCountDto likeCountDto = new LikeCountDto("2", 1);
 
@@ -36,7 +36,7 @@ public class LikeCountDTOTests {
 //    }
 
     @Test
-    public void notEqualTest() {
+    void notEqualTest() {
         final LikeCountDto likeCountDtoA = new LikeCountDto();
         final LikeCountDto likeCountDtoB = new LikeCountDto();
 

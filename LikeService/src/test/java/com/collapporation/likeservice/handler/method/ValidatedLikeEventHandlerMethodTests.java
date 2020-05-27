@@ -32,7 +32,7 @@ public class ValidatedLikeEventHandlerMethodTests
     }
 
     @Test
-    public void handlingTypeTest() {
+    void handlingTypeTest() {
         final ValidatedLikeEventHandlerMethod validatedLikeEventHandlerMethod = new ValidatedLikeEventHandlerMethod(repo);
 
         assertThat(validatedLikeEventHandlerMethod).isNotNull();
@@ -41,7 +41,7 @@ public class ValidatedLikeEventHandlerMethodTests
 
     @Test
     @Transactional
-    public void saveLikeTest()
+    void saveLikeTest()
     {
         final ValidatedLikeEventHandlerMethod validatedLikeEventHandlerMethod = new ValidatedLikeEventHandlerMethod(repo);
 

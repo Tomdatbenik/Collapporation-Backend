@@ -17,7 +17,7 @@ public class LikeDTOTests {
     }
 
     @Test
-    public void allArgsContructorTest()
+    void allArgsContructorTest()
     {
         final LikeDto like = new LikeDto("2", "3");
 
@@ -26,7 +26,7 @@ public class LikeDTOTests {
     }
 
     @Test
-    public void likeDTOContructorTest()
+    void likeDTOContructorTest()
     {
         final Like like = new Like("1", "2");
 
@@ -46,7 +46,7 @@ public class LikeDTOTests {
 //    }
 
     @Test
-    public void notEqualTest() {
+    void notEqualTest() {
         final LikeDto likeDTOA = new LikeDto();
         final LikeDto likeDTOB = new LikeDto();
 

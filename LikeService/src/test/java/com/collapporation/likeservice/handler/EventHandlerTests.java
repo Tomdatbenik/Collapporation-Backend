@@ -29,7 +29,7 @@ public class EventHandlerTests
 
     @Test
     @Transactional
-    public void processEventTest(){
+    void processEventTest(){
         eventHandler.processEvent((new LikeValidatedEvent("5","6")));
         final Like like = repo.getLikeByObjectAndLikedBy("5","6");
 
@@ -44,7 +44,7 @@ public class EventHandlerTests
     }
 
     @Test
-    public void processUnknownEventTest() {
+    void processUnknownEventTest() {
         assertDoesNotThrow(() -> eventHandler.processEvent(new UnknownEvent()));
     }
 }

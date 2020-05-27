@@ -7,7 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class ValidateLikeEventTest
 {
     @Test
-    public void allArgsConstructorTest()
+    void allArgsConstructorTest()
     {
         final ValidateLikeEvent validateLikeEvent = new ValidateLikeEvent("1", "2");
 
@@ -16,7 +16,7 @@ public class ValidateLikeEventTest
     }
 
     @Test
-    public void equalsTest()
+    void equalsTest()
     {
         final ValidateLikeEvent likeValidatedEventA = new ValidateLikeEvent();
         final ValidateLikeEvent likeValidatedEventB = new ValidateLikeEvent();
@@ -25,7 +25,7 @@ public class ValidateLikeEventTest
     }
 
     @Test
-    public void notEqualTest()
+    void notEqualTest()
     {
         final ValidateLikeEvent likeValidatedEventA = new ValidateLikeEvent("1", "2");
         final ValidateLikeEvent likeValidatedEventB = new ValidateLikeEvent();

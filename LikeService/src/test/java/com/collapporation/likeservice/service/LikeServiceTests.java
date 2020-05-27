@@ -19,7 +19,7 @@ public class LikeServiceTests
     private LikeService service;
 
     @Test
-    public void getLikeByObjectAndLikedByTest()
+    void getLikeByObjectAndLikedByTest()
     {
         final Like like = service.getLikeByObjectAndLikedBy("1", "2");
 
@@ -29,7 +29,7 @@ public class LikeServiceTests
     }
 
     @Test
-    public void getLikeCollection()
+    void getLikeCollection()
     {
         final LikeCollection likeCollection = service.getLikeCollectionByObjectId("1");
 
@@ -38,7 +38,7 @@ public class LikeServiceTests
     }
 
     @Test
-    public void hasAlreadyLikedIsTrueTest()
+    void hasAlreadyLikedIsTrueTest()
     {
         final boolean result = service.hasAlreadyLiked("1", "2");
 
@@ -46,7 +46,7 @@ public class LikeServiceTests
     }
 
     @Test
-    public void hasAlreadyLikedIsFalseTest()
+    void hasAlreadyLikedIsFalseTest()
     {
         final boolean result = service.hasAlreadyLiked("5", "5");
 
