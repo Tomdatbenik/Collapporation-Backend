@@ -37,7 +37,7 @@ public class LikeController {
             }
             else
             {
-                likeService.validateLike(new Like((likeDto)));
+                likeService.validateLike(new Like((likeDto.getObject_id(),uuid)));
                 return new ResponseEntity(HttpStatus.OK);
             }
         }
