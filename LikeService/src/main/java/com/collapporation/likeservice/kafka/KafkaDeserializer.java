@@ -6,7 +6,7 @@ import lombok.SneakyThrows;
 import org.apache.kafka.common.serialization.Deserializer;
 
 public class KafkaDeserializer implements Deserializer<Event> {
-    private final String eventFolder = "com.collapporation.likeservice.event";
+    private final String eventFolder = "com.collapporation.likeservice.event.";
 
     private final ObjectMapper objectMapper;
 
