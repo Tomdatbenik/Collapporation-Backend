@@ -1,4 +1,4 @@
-package com.collapporation.projectservice.models;
+package com.collapporation.projectservice.dto;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
