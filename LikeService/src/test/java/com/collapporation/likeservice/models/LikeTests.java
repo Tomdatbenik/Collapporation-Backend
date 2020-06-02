@@ -29,11 +29,10 @@ public class LikeTests {
     @Test
     void likeDTOContructorTest()
     {
-        final LikeDto likeDto = new LikeDto("1", "2");
+        final LikeDto likeDto = new LikeDto("1");
 
         final Like like = new Like(likeDto);
 
-        assertThat(like.getLiked_by_id()).isEqualTo(likeDto.getLiked_by_id());
         assertThat(like.getObject_id()).isEqualTo(likeDto.getObject_id());
     }
 

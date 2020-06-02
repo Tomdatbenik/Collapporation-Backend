@@ -37,7 +37,6 @@ public class Like {
 
     public Like(LikeDto likeDto)
     {
-        this.liked_by_id = likeDto.getLiked_by_id();
         this.object_id = likeDto.getObject_id();
     }
 }

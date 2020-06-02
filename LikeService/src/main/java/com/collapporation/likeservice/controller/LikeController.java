@@ -30,7 +30,7 @@ public class LikeController {
 
         if(likeService.hasAlreadyLiked(likeDto.getObject_id(),uuid))
         {
-            Like like = likeService.getLikeByObjectAndLikedBy(likeDto.getObject_id(),likeDto.getLiked_by_id());
+            Like like = likeService.getLikeByObjectAndLikedBy(likeDto.getObject_id(),uuid);
             likeService.deleteLike(like);
         }
         else
