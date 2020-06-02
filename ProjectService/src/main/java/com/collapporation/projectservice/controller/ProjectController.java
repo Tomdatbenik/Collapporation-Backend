@@ -2,6 +2,7 @@ package com.collapporation.projectservice.controller;
 
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.models.dto.ErrorDto;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,8 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -42,15 +45,13 @@ public class ProjectController {
             //TODO fill project with tags links comments etc.
         }
 
-
-
         return new ResponseEntity(projectDTO, HttpStatus.OK);
     }
 
     @PostMapping("/create")
     public ResponseEntity createProject(@RequestBody Project project)
     {
-        String errors = validateProject(project);
+        List<ErrorDto> errors = validateProject(project);
 
         if(errors == null)
         {
@@ -73,7 +74,7 @@ public class ProjectController {
     @PutMapping("/update")
     public ResponseEntity updateProject(@RequestBody Project project)
     {
-        String errors = validateProject(project);
+        List<ErrorDto> errors = validateProject(project);
 
         if(errors == null)
         {
@@ -85,7 +86,7 @@ public class ProjectController {
         }
     }
 
-    private String validateProject(Project project)
+    private List<ErrorDto> validateProject(Project project)
     {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
@@ -97,14 +98,12 @@ public class ProjectController {
             return null;
         }
         else {
-
-            AtomicReference<String> errorText = new AtomicReference<>("");
-
+            List<ErrorDto> errorList = new ArrayList<>();
             errors.stream().forEach(e->{
-                errorText.set(errorText.get() + e.getPropertyPath() + " " +  e.getMessage()  + "\n");
+                errorList.add(new ErrorDto(e.getPropertyPath() + " " +  e.getMessage(), e.getPropertyPath().toString()));
             });
 
-            return errorText.get();
+            return errorList;
         }
     }
 }
