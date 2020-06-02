@@ -18,7 +18,7 @@ public class ProjectTests
         assertThat(project).isNotNull();
         assertThat(project.getId()).isNull();
         assertThat(project.getTitle()).isNull();
-        assertThat(project.getStatus()).isNull();
+        assertThat(project.getStatus()).isEqualTo(ProjectStatus.CONCEPT);
         assertThat(project.getSmallDescription()).isNull();
         assertThat(project.getDescription()).isNull();
         assertThat(project.getImg()).isNull();
