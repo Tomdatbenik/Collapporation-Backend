@@ -28,15 +28,18 @@ public class LikeController {
 
         final String uuid = decodedJWT.getClaim("uuid").asString();
 
-        if(likeService.hasAlreadyLiked(likeDto.getObject_id(),uuid))
+        if(uuid != null)
         {
-            Like like = likeService.getLikeByObjectAndLikedBy(likeDto.getObject_id(),uuid);
-            likeService.deleteLike(like);
-        }
-        else
-        {
-            likeService.validateLike(new Like((likeDto)));
-            return new ResponseEntity(HttpStatus.OK);
+            if(likeService.hasAlreadyLiked(likeDto.getObject_id(),uuid))
+            {
+                Like like = likeService.getLikeByObjectAndLikedBy(likeDto.getObject_id(),uuid);
+                likeService.deleteLike(like);
+            }
+            else
+            {
+                likeService.validateLike(new Like((likeDto)));
+                return new ResponseEntity(HttpStatus.OK);
+            }
         }
 
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
