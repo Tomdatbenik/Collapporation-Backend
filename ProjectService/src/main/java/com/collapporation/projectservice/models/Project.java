@@ -42,7 +42,7 @@ public class Project
 
     @Column(name = "status")
     @JsonProperty("status")
-    private ProjectStatus status;
+    private ProjectStatus status = ProjectStatus.CONCEPT;
 
     //TODO might give errors
     @JsonProperty("img")
