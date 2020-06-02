@@ -1,6 +1,7 @@
 package com.collapporation.likeservice.handler.method;
 
 import com.collapporation.likeservice.event.LikeValidatedEvent;
+import com.collapporation.likeservice.event.ValidateLikeEvent;
 import com.collapporation.likeservice.models.Like;
 import com.collapporation.likeservice.repo.LikeRepo;
 import org.junit.jupiter.api.Test;
@@ -45,7 +46,7 @@ public class ValidatedLikeEventHandlerMethodTests
     {
         final ValidatedLikeEventHandlerMethod validatedLikeEventHandlerMethod = new ValidatedLikeEventHandlerMethod(repo);
 
-        validatedLikeEventHandlerMethod.handle(new LikeValidatedEvent("2", "3"));
+        validatedLikeEventHandlerMethod.handle(new ValidateLikeEvent("2", "3"));
 
         final Like like = repo.getLikeByObjectAndLikedBy("2", "3");
 
