@@ -2,6 +2,7 @@ package com.collapperation.userservice.handler.method;
 
 import com.collapperation.userservice.event.UserLoggedInEvent;
 import com.collapperation.userservice.handler.HandlerMethod;
+import com.collapperation.userservice.model.User;
 import com.collapperation.userservice.repo.UserRepo;
 import org.springframework.stereotype.Component;
 
@@ -19,9 +20,13 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
     @Override
     @Transactional
     public void handle(UserLoggedInEvent event) {
-        userRepo.updateBasicUserInfo(
-                event.getPicture(),
-                event.getUsername(),
-                event.getUuid());
+        if(userRepo.findById(event.getUuid()) == null)
+        {
+            User user = new User();
+            user.setId(event.getUuid());
+            user.setUsername(event.getUsername());
+            user.setPicture(event.getPicture());
+            userRepo.save(user);
+        }
     }
 }
