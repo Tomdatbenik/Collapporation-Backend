@@ -5,6 +5,7 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class AuthFilter extends ZuulFilter {
     private final JWTVerifier jwtVerifier;
+    @Value("${collapporation.gateway.authfilter.matches}")
+    private String regexMatches;
 
     @Override
     public String filterType() {
@@ -26,7 +29,7 @@ public class AuthFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return true;
+        return RequestContext.getCurrentContext().getRequest().getServletPath().matches(regexMatches);
     }
 
     @Override

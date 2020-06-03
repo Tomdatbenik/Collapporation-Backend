@@ -21,3 +21,6 @@ collapporation:
   token:
     issuer: collapperation-token-service
     publicKey: publicKey.pem
+  gateway:
+    authfilter:
+      matches: (/like-service/**)|(/user-service/**)
