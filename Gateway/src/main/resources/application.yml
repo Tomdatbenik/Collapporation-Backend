@@ -23,4 +23,4 @@ collapporation:
     publicKey: publicKey.pem
   gateway:
     authfilter:
-      matches: (/like-service/**)|(/user-service/**)
+      matches: (/like-service/.)|(/user-service/.)|(/project-service/.)|(token-service/token/refresh)
