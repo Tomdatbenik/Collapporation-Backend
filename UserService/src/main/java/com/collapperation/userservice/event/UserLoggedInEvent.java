@@ -14,5 +14,7 @@ import lombok.NoArgsConstructor;
 public class UserLoggedInEvent extends Event {
     private String uuid;
     private String username;
+    private String firstName;
+    private String lastName;
     private String picture;
 }

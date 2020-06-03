@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserLoggedInEvent extends Event {
     private String uuid;
-    private String userName;
+    private String username;
     private String firstName;
     private String lastName;
     private String picture;

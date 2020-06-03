@@ -21,13 +21,17 @@ public class UserLoggedInEventTests {
     public void allArgsConstructorTest(){
         final String picture = "a url";
         final String userName = "dwqftyegi";
+        final String firstName = "firstname";
+        final String lastName = "lastname";
         final String uuid = "ewfyweyf";
-        final UserLoggedInEvent userLoggedInEvent =  new UserLoggedInEvent(uuid, userName, picture);
+        final UserLoggedInEvent userLoggedInEvent =  new UserLoggedInEvent(uuid, userName, firstName, lastName, picture);
 
         assertThat(userLoggedInEvent).isNotNull();
         assertThat(userLoggedInEvent.getCreator()).isEqualTo("user-service");
         assertThat(userLoggedInEvent.getUuid()).isEqualTo(uuid);
         assertThat(userLoggedInEvent.getUsername()).isEqualTo(userName);
+        assertThat(userLoggedInEvent.getFirstName()).isEqualTo(firstName);
+        assertThat(userLoggedInEvent.getLastName()).isEqualTo(lastName);
         assertThat(userLoggedInEvent.getPicture()).isEqualTo(picture);
     }
 

@@ -20,12 +20,17 @@ public class UserLoggedInEventHandlerMethod extends HandlerMethod<UserLoggedInEv
     @Override
     @Transactional
     public void handle(UserLoggedInEvent event) {
-        if(userRepo.findById(event.getUuid()) == null)
+        System.out.println(userRepo.findById(event.getUuid()).isEmpty());
+
+        if(userRepo.findById(event.getUuid()).isEmpty())
         {
             User user = new User();
             user.setId(event.getUuid());
             user.setUsername(event.getUsername());
+            user.setFirstName(event.getFirstName());
+            user.setLastName(event.getLastName());
             user.setPicture(event.getPicture());
+
             userRepo.save(user);
         }
     }
