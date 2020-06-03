@@ -16,3 +16,8 @@ eureka:
 
 zuul:
   sensitive-headers: Cookie,Set-Cookie
+
+collapporation:
+  token:
+    issuer: collapperation-token-service
+    publicKey: publicKey.pem
