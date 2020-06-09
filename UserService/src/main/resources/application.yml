@@ -4,21 +4,18 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
+    url: jdbc:mysql://80.57.128.150:3306/users?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: collapporation
+    password: JJ9m]#/rPNphX>2Csd/g
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
   kafka:
     consumer:
       bootstrap-servers: tomdatbenik.nl:9092
     producer:
       bootstrap-servers: tomdatbenik.nl:9092
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
 
 server:
   port: 8093

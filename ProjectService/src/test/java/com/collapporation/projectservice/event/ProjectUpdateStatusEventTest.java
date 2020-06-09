@@ -3,6 +3,7 @@ package com.collapporation.projectservice.event;
 import com.collapporation.projectservice.event.ProjectUpdateStatusEvent;
 import com.collapporation.projectservice.models.ProjectStatus;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
