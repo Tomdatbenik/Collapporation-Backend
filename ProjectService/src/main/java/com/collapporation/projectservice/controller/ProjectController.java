@@ -47,7 +47,13 @@ public class ProjectController {
         }
         else
         {
-            projectDTO.setLikes(restTemplate.getForObject("http://like-service/like/count" + project.getId(), String.class));
+            try{
+                projectDTO.setLikes(restTemplate.getForObject("http://like-service/like/count?object_id=" + project.getId(), String.class));
+            }
+            catch (Exception ex) {
+                projectDTO.setLikes(null);
+            }
+
             //TODO fill project with tags links comments etc.
         }
 

@@ -37,7 +37,7 @@ public class ValidatedLikeEventHandlerMethodTests
         final ValidatedLikeEventHandlerMethod validatedLikeEventHandlerMethod = new ValidatedLikeEventHandlerMethod(repo);
 
         assertThat(validatedLikeEventHandlerMethod).isNotNull();
-        assertThat(validatedLikeEventHandlerMethod.getHandlingType()).isEqualTo(ValidateLikeEvent.class);
+        assertThat(validatedLikeEventHandlerMethod.getHandlingType()).isEqualTo(LikeValidatedEvent.class);
     }
 
     @Test

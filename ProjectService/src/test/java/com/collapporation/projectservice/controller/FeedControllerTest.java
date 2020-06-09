@@ -47,7 +47,7 @@ public class FeedControllerTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200)).andReturn();
 
-        String expectedResult = "[{\"id\":\"0\",\"title\":\"project0\",\"smallDescription\":\"small description of project0\",\"status\":\"CONCEPT\",\"img\":\"https://picsum.photos/510/300?random\",\"owner\":\"{ name: 'no user could be found' }\",\"created\":null,\"tags\":[],\"likes\":2,\"follow\":true}]";
+        String expectedResult = "[{\"id\":\"0\",\"title\":\"project0\",\"smallDescription\":\"small description of project0\",\"status\":\"CONCEPT\",\"img\":\"https://picsum.photos/510/300?random\",\"owner\":{ name: 'no user could be found' },\"created\":null,\"tags\":[],\"likes\":2,\"follow\":true}]";
 
         assertThat(result.getResponse().getContentAsString()).isEqualTo(expectedResult);
     }
