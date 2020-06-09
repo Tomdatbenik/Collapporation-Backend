@@ -11,11 +11,8 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
   kafka:
-    consumer:
-      bootstrap-servers: tomdatbenik.nl:9092
-    producer:
-      bootstrap-servers: tomdatbenik.nl:9092
-    topic: like
+    streams:
+      auto-startup: false
   h2:
     console:
       enabled: true
@@ -26,12 +23,7 @@ server:
 
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: "${EUREKA_URI:http://localhost:8101/eureka}"
-    instance:
-      preferIpAddress: true
+    enabled: false
 
 collapporation:
   token:
