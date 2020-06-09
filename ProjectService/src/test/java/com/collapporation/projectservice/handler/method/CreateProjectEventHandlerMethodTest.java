@@ -48,13 +48,13 @@ public class CreateProjectEventHandlerMethodTest
     public void saveProjectTest()
     {
         final Project creatorProject = new Project();
+        creatorProject.setId("3");
         creatorProject.setTitle("Test project");
         creatorProject.setSmallDescription("small description of project0");
         creatorProject.setDescription("very large markdown description of project0");
         creatorProject.setStatus(ProjectStatus.CONCEPT);
         creatorProject.setImg("https://picsum.photos/test/510/300?random");
         creatorProject.setOwnerId("0");
-        creatorProject.setCreated(LocalDateTime.now());
 
         final CreateProjectEventHandleMethod createProjectEventHandleMethod = new CreateProjectEventHandleMethod(projectRepo);
 
@@ -63,12 +63,13 @@ public class CreateProjectEventHandlerMethodTest
         final Project project = projectRepo.findAll().get( projectRepo.findAll().size()-1);
 
         assertThat(project).isNotNull();
+        assertThat(project.getId()).isEqualTo("3");
         assertThat(project.getTitle()).isEqualTo(creatorProject.getTitle());
         assertThat(project.getSmallDescription()).isEqualTo(creatorProject.getSmallDescription());
         assertThat(project.getDescription()).isEqualTo(creatorProject.getDescription());
         assertThat(project.getImg()).isEqualTo(creatorProject.getImg());
         assertThat(project.getOwnerId()).isEqualTo(creatorProject.getOwnerId());
-        assertThat(project.getCreated()).isEqualTo(creatorProject.getCreated());
+        assertThat(project.getCreated()).isNotNull();
 
     }
 }

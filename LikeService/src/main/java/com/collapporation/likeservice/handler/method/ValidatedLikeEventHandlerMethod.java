@@ -8,18 +8,18 @@ import com.collapporation.likeservice.models.Like;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ValidatedLikeEventHandlerMethod extends HandlerMethod<ValidateLikeEvent>
+public class ValidatedLikeEventHandlerMethod extends HandlerMethod<LikeValidatedEvent>
 {
     private final LikeRepo likeRepo;
 
     protected ValidatedLikeEventHandlerMethod(LikeRepo likeRepo)
     {
-        super(ValidateLikeEvent.class);
+        super(LikeValidatedEvent.class);
         this.likeRepo = likeRepo;
     }
 
     @Override
-    public void handle(ValidateLikeEvent event)
+    public void handle(LikeValidatedEvent event)
     {
         likeRepo.save(new Like(event.getObject_id(),event.getLiked_by_id()));
     }

@@ -20,8 +20,8 @@ public class Project
 {
     @Id
     @JsonProperty("id")
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+//    @GeneratedValue(generator = "system-uuid")
+//    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Column(name = "id", unique = true)
     private String id;
 

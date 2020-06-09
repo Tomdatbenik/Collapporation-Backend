@@ -31,7 +31,7 @@ public class EventHandlerTests
     @Test
     @Transactional
     void processEventTest(){
-        eventHandler.processEvent((new ValidateLikeEvent("5","6")));
+        eventHandler.processEvent((new LikeValidatedEvent("5","6")));
         final Like like = repo.getLikeByObjectAndLikedBy("5","6");
 
         assertThat(like.getObject_id()).isEqualTo("5");

@@ -41,7 +41,7 @@ public class ProjectControllerTests {
                 MockMvcRequestBuilders.get("/project/0")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("{\"id\":\"0\",\"title\":\"project0\",\"smallDescription\":\"small description of project0\",\"status\":\"CONCEPT\",\"img\":\"https://picsum.photos/510/300?random\",\"owner\":0,\"created\":null}")));
+                .andExpect(content().string(equalTo("{\"id\":\"0\",\"title\":\"project0\",\"smallDescription\":\"small description of project0\",\"status\":\"CONCEPT\",\"img\":\"https://picsum.photos/510/300?random\",\"owner\":0,\"created\":null,\"description\":\"very large markdown description of project0\",\"tags\":null,\"links\":null,\"collaborators\":null,\"comments\":null,\"likes\":null,\"follows\":null}")));
     }
 
     @Test
