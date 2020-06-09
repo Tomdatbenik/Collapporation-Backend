@@ -46,7 +46,7 @@ public class ValidatedLikeEventHandlerMethodTests
     {
         final ValidatedLikeEventHandlerMethod validatedLikeEventHandlerMethod = new ValidatedLikeEventHandlerMethod(repo);
 
-        validatedLikeEventHandlerMethod.handle(new ValidateLikeEvent("2", "3"));
+        validatedLikeEventHandlerMethod.handle(new LikeValidatedEvent("2", "3"));
 
         final Like like = repo.getLikeByObjectAndLikedBy("2", "3");
 

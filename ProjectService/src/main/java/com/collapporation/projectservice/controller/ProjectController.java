@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -31,6 +32,9 @@ public class ProjectController {
     @Autowired
     private final ProjectService projectService;
 
+    @Autowired
+    private final RestTemplate restTemplate;
+
     private final Logger logger = LoggerFactory.getLogger(ProjectController.class);
 
     @GetMapping("/{projectId}")
@@ -43,12 +47,12 @@ public class ProjectController {
         }
         else
         {
+            projectDTO.setLikes(restTemplate.getForObject("http://like-service/like/count" + project.getId(), String.class));
             //TODO fill project with tags links comments etc.
         }
 
         return new ResponseEntity(projectDTO, HttpStatus.OK);
     }
-
     @PostMapping("/create")
     public ResponseEntity createProject(@RequestBody Project project)
     {
@@ -56,7 +60,7 @@ public class ProjectController {
 
         if(errors == null)
         {
-            project.setId(UUID.randomUUID().toString());
+            project.setId(UUID.randomUUID().toString().replace("-", ""));
             projectService.createProject(project);
             return new ResponseEntity(project,HttpStatus.OK);
         }
