@@ -20,6 +20,7 @@ import javax.validation.ValidatorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
 @RestController
@@ -55,8 +56,10 @@ public class ProjectController {
 
         if(errors == null)
         {
+            UUID uuid = new UUID();
+            project.setId(uuid.randomUUID().toString());
             projectService.createProject(project);
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity(project,HttpStatus.OK);
         }
         else {
             return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
