@@ -28,7 +28,7 @@ public class EventHandlerTests {
     @Test
     @Transactional
     public void processEventTest(){
-        final String id = "0";
+        final String id = "3";
         final String username = "new userName";
         final String firstName = "firstname";
         final String lastName = "lastname";

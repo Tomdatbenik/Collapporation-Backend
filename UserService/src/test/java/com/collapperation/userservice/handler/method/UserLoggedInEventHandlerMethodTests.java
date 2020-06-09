@@ -41,9 +41,9 @@ public class UserLoggedInEventHandlerMethodTests
 
     @Test
     @Transactional
-    public void updateBasicUserInfoTest()
+    public void userLoggedInFirstTime()
     {
-        final String id = "0";
+        final String id = "5";
         final String username = "new userName";
         final String firstName ="new firstName";
         final String lastName = "new lastName";
