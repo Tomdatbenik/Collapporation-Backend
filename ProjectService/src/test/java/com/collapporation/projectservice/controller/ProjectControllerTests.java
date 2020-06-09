@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -45,7 +46,8 @@ public class ProjectControllerTests {
         mockMvc.perform(
                 MockMvcRequestBuilders.post("/project/create").contentType(MediaType.APPLICATION_JSON).content("{\"id\": \"\",\"title\": \"test\",\"smallDescription\": \"test kleine beschrijving\",\"description\": \"test beschrijving\",\"status\": \"CONCEPT\"}")
                         .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(content().string(notNullValue()));
     }
 
     @Test

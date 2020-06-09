@@ -5,17 +5,17 @@ FROM openjdk:11-jdk
 VOLUME /tmp
 
 # Make port available to the world outside this container
-EXPOSE 8093
+EXPOSE 8095
 
 # The application's jar file
 # The jar file's name is the pom.xml artifactId-version.jar, if this name needs to be changed, it needs to be changed a total of 3 times in this file
-ARG JAR_FILE=target/project-service-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/like-service-0.0.1-SNAPSHOT.jar
 
 RUN mkdir /collapporation
 WORKDIR /collapporation
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} /collapporation/project-service-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} /collapporation/like-service-0.0.1-SNAPSHOT.jar
 
 # Run the jar file
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/collapporation/project-service-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/collapporation/like-service-0.0.1-SNAPSHOT.jar"]

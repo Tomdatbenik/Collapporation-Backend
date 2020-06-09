@@ -3,6 +3,7 @@ package com.collapporation.likeservice.handler;
 
 import com.collapporation.likeservice.event.Event;
 import com.collapporation.likeservice.event.LikeValidatedEvent;
+import com.collapporation.likeservice.event.ValidateLikeEvent;
 import com.collapporation.likeservice.models.Like;
 import com.collapporation.likeservice.repo.LikeRepo;
 import org.junit.jupiter.api.Test;
@@ -30,7 +31,7 @@ public class EventHandlerTests
     @Test
     @Transactional
     void processEventTest(){
-        eventHandler.processEvent((new LikeValidatedEvent("5","6")));
+        eventHandler.processEvent((new ValidateLikeEvent("5","6")));
         final Like like = repo.getLikeByObjectAndLikedBy("5","6");
 
         assertThat(like.getObject_id()).isEqualTo("5");
