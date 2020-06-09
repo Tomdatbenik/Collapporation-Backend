@@ -9,13 +9,13 @@ EXPOSE 8093
 
 # The application's jar file
 # The jar file's name is the pom.xml artifactId-version.jar, if this name needs to be changed, it needs to be changed a total of 3 times in this file
-ARG JAR_FILE=target/userservice-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/UserService-0.0.1-SNAPSHOT.jar
 
 RUN mkdir /collapporation
 WORKDIR /collapporation
 
 # Add the application's jar to the container
-ADD ${JAR_FILE} /collapporation/userservice-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} /collapporation/UserService-0.0.1-SNAPSHOT.jar
 
 # Run the jar file
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/collapporation/userservice-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/collapporation/UserService-0.0.1-SNAPSHOT.jar"]
