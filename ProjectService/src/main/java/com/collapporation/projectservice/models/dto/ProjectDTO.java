@@ -1,9 +1,13 @@
 package com.collapporation.projectservice.models.dto;
 
 import com.collapporation.projectservice.models.Project;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
+@Setter
+@Getter
 public class ProjectDTO extends BasicDTO{
 
     public ProjectDTO(Project project) {
