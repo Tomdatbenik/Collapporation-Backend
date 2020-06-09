@@ -43,19 +43,23 @@ public class UserLoggedInEventHandlerMethodTests
 
     @Test
     @Transactional
-    public void updateBasicUserInfoTest()
+    public void userLoggedInFirstTime()
     {
-        final String id = "0";
+        final String id = "5";
         final String username = "new userName";
+        final String firstName ="new firstName";
+        final String lastName = "new lastName";
         final String picture = "new picture";
         final UserLoggedInEventHandlerMethod userLoggedInEventHandlerMethod = new UserLoggedInEventHandlerMethod(userRepo);
 
-        userLoggedInEventHandlerMethod.handle(new UserLoggedInEvent(id, username, picture));
+        userLoggedInEventHandlerMethod.handle(new UserLoggedInEvent(id, username, firstName, lastName, picture));
         final User user = userRepo.getOne(id);
 
         assertThat(user).isNotNull();
         assertThat(user.getId()).isEqualTo(id);
         assertThat(user.getUsername()).isEqualTo(username);
+        assertThat(user.getFirstName()).isEqualTo(firstName);
+        assertThat(user.getLastName()).isEqualTo(lastName);
         assertThat(user.getPicture()).isEqualTo(picture);
     }
 }

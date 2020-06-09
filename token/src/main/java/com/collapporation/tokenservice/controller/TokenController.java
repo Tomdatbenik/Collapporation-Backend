@@ -37,8 +37,8 @@ public class TokenController {
             dispatcher.dispatch("user",new UserLoggedInEvent(
                     firebaseToken.getUid(),
                     firebaseToken.getName(),
-                    "",
-                    "",
+                    firebaseToken.getName().split(" ")[0],
+                    firebaseToken.getName().split(" ")[1],
                     firebaseToken.getPicture()
             ));
             logger.info("generating token");

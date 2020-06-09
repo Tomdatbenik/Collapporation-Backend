@@ -30,16 +30,20 @@ public class EventHandlerTests {
     @Test
     @Transactional
     public void processEventTest(){
-        final String id = "0";
+        final String id = "3";
         final String username = "new userName";
+        final String firstName = "firstname";
+        final String lastName = "lastname";
         final String picture = "new picture";
 
-        eventHandler.processEvent(new UserLoggedInEvent(id, username, picture));
+        eventHandler.processEvent(new UserLoggedInEvent(id, username, firstName, lastName, picture));
         final User user = userRepo.getOne(id);
 
         assertThat(user).isNotNull();
         assertThat(user.getId()).isEqualTo(id);
         assertThat(user.getUsername()).isEqualTo(username);
+        assertThat(user.getFirstName()).isEqualTo(firstName);
+        assertThat(user.getLastName()).isEqualTo(lastName);
         assertThat(user.getPicture()).isEqualTo(picture);
     }
 
