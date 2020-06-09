@@ -3,6 +3,7 @@ package com.collapporation.projectservice.handler.method;
 import com.collapporation.projectservice.event.ProjectCreatedEvent;
 import com.collapporation.projectservice.handler.method.UnrecognizedEventHandlerMethod;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.TestPropertySource;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
