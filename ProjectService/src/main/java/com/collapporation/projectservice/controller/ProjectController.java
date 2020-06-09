@@ -56,8 +56,7 @@ public class ProjectController {
 
         if(errors == null)
         {
-            UUID uuid = new UUID();
-            project.setId(uuid.randomUUID().toString());
+            project.setId(UUID.randomUUID().toString());
             projectService.createProject(project);
             return new ResponseEntity(project,HttpStatus.OK);
         }
