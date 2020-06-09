@@ -1,4 +1,4 @@
-package com.collapporation.gateway;
+package com.collapporation.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
