@@ -3,10 +3,12 @@ package com.collapporation.projectservice.event;
 import com.collapporation.projectservice.event.ProjectCreatedEvent;
 import com.collapporation.projectservice.models.Project;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ActiveProfiles("test")
 public class ProjectCreatedEventTest
 {
     @Test

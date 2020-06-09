@@ -8,7 +8,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: collapporation
     password: JJ9m]#/rPNphX>2Csd/g
-
+  jpa:
+    hibernate:
+      ddl-auto: update
   kafka:
     consumer:
       bootstrap-servers: tomdatbenik.nl:9092

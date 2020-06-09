@@ -14,10 +14,7 @@ import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
-@Sql(scripts = "/test/project.sql")
 @ActiveProfiles("test")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ProjectFeedDTOTest {
 
     LocalDateTime localTime = LocalDateTime.now();
