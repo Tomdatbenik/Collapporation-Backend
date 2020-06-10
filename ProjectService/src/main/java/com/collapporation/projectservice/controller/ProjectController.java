@@ -43,7 +43,6 @@ public class ProjectController {
 
         log.info("Getting project with id: " + projectId);
         final Project project = projectService.getProject(projectId);
-        log.info("Received project with id: " + project.getId());
         ProjectDTO projectDTO = new ProjectDTO(project);
 
         if(project == null){
@@ -79,7 +78,7 @@ public class ProjectController {
     {
         log.info("Validating project");
         List<ErrorDto> errors = validateProject(project);
-        log.info("Errors with validating project: " + errors.size());
+
         if(errors == null)
         {
             log.info("Creating random UUiD for project: " + project.getTitle());
@@ -92,6 +91,7 @@ public class ProjectController {
             return new ResponseEntity(project,HttpStatus.OK);
         }
         else {
+            log.info("Errors with validating project: " + errors.size());
             log.warn("Returning errors");
             return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -112,7 +112,7 @@ public class ProjectController {
     {
         log.info("Validating project");
         List<ErrorDto> errors = validateProject(project);
-        log.info("Errors with validating project: " + errors.size());
+
 
         if(errors == null)
         {
@@ -123,6 +123,7 @@ public class ProjectController {
             return new ResponseEntity(HttpStatus.OK);
         }
         else {
+            log.info("Errors with validating project: " + errors.size());
             log.warn("Returning errors");
             return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
         }
