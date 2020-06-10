@@ -6,6 +6,7 @@ import com.collapporation.projectservice.models.dto.ErrorDto;
 import com.collapporation.projectservice.models.dto.ProjectDTO;
 import com.collapporation.projectservice.service.ProjectService;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicReference;
 
+@Log4j2
 @RestController
 @AllArgsConstructor
 @RequestMapping("/project")
@@ -39,38 +40,54 @@ public class ProjectController {
 
     @GetMapping("/{projectId}")
     public ResponseEntity<Project> getProject(@PathVariable("projectId") String projectId) {
+
+        log.info("Getting project with id: " + projectId);
         final Project project = projectService.getProject(projectId);
+        log.info("Received project with id: " + project.getId());
         ProjectDTO projectDTO = new ProjectDTO(project);
 
         if(project == null){
+            log.warn("Project: is null, returning");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         else
         {
             try{
+                log.info("Getting likes by id: " + project.getId() );
                 projectDTO.setLikes(restTemplate.getForObject("http://like-service/like/count?object_id=" + project.getId(), String.class));
+                log.info("Received likes by id: " + project.getId() );
             }
             catch (Exception ex) {
+                log.error(ex.getMessage());
                 projectDTO.setLikes(null);
             }
 
             //TODO fill project with tags links comments etc.
         }
 
+        log.info("Returning: " + projectDTO );
         return new ResponseEntity(projectDTO, HttpStatus.OK);
     }
+
     @PostMapping("/create")
     public ResponseEntity createProject(@RequestBody Project project)
     {
+        log.info("Validating project");
         List<ErrorDto> errors = validateProject(project);
-
+        log.info("Errors with validating project: " + errors.size());
         if(errors == null)
         {
+            log.info("Creating random UUiD for project: " + project.getTitle());
             project.setId(UUID.randomUUID().toString().replace("-", ""));
+
+            log.info("Creating project");
             projectService.createProject(project);
+
+            log.info("Returning project with id: " + project.getId());
             return new ResponseEntity(project,HttpStatus.OK);
         }
         else {
+            log.warn("Returning errors");
             return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
         }
     }
@@ -78,22 +95,30 @@ public class ProjectController {
     @PutMapping("/update/status")
     public ResponseEntity updateStatus(@PathVariable("projectId") String projectId, @PathVariable("status") ProjectStatus status)
     {
+        log.info("updating project status to: " + status);
         projectService.updateStatus(projectId,status);
 
+        log.info("returning OK");
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @PutMapping("/update")
     public ResponseEntity updateProject(@RequestBody Project project)
     {
+        log.info("Validating project");
         List<ErrorDto> errors = validateProject(project);
+        log.info("Errors with validating project: " + errors.size());
 
         if(errors == null)
         {
+            log.info("Updating project");
             projectService.update(project);
+
+            log.info("Returning OK");
             return new ResponseEntity(HttpStatus.OK);
         }
         else {
+            log.warn("Returning errors");
             return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
         }
     }
