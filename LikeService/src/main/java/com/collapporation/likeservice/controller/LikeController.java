@@ -8,6 +8,7 @@ import com.collapporation.likeservice.service.LikeService;
 import com.collapporation.likeservice.token.TokenValidator;
 import com.collapporation.likeservice.models.LikeCollection;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/like")
+@Log4j2
 public class LikeController {
 
     private final LikeService likeService;
@@ -24,6 +26,8 @@ public class LikeController {
     @PostMapping("/like")
     public ResponseEntity createLike(@RequestBody LikeDto likeDto, @RequestHeader("Authorization") String token)
     {
+        log.info("Creating like");
+        log.info("Validating token: ", token);
         final DecodedJWT decodedJWT = tokenValidator.verify(token);
 
         final String uuid = decodedJWT.getClaim("uuid").asString();
@@ -38,10 +42,13 @@ public class LikeController {
             else
             {
                 likeService.validateLike(new Like(likeDto.getObject_id(),uuid));
-                return new ResponseEntity(HttpStatus.OK);
             }
+
+            log.info("Returning OK");
+            return new ResponseEntity(HttpStatus.OK);
         }
 
+        log.warn("Token invalid: ", token);
         return new ResponseEntity(HttpStatus.UNAUTHORIZED);
     }
 
@@ -50,8 +57,13 @@ public class LikeController {
     @GetMapping("/count")
     public ResponseEntity getLikeCountDto(String object_id)
     {
+        log.info("Getting like collection");
         LikeCollection collection = likeService.getLikeCollectionByObjectId(object_id);
+        log.info("Received like collection");
+
         LikeCountDto likeCountDto = new LikeCountDto(object_id, collection.getCount());
+
+        log.info("Returning like collection Dto");
         return new ResponseEntity(likeCountDto, HttpStatus.OK);
     }
 }
