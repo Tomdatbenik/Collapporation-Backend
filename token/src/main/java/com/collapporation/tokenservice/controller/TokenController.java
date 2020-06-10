@@ -34,13 +34,24 @@ public class TokenController {
             logger.info("getting firebase token");
             final FirebaseToken firebaseToken = firebaseAuth.verifyIdToken(idToken);
             logger.info("dispatching event");
+
+            String[] name =  firebaseToken.getName().split(" ", 1);
+            String firstname = name[0];
+            String lastname = "";
+
+            if(name.length > 1)
+            {
+                lastname = name[1];
+            }
+
             dispatcher.dispatch("user",new UserLoggedInEvent(
                     firebaseToken.getUid(),
                     firebaseToken.getName(),
-                    firebaseToken.getName().split(" ")[0],
-                    firebaseToken.getName().split(" ")[1],
+                    firstname,
+                    lastname,
                     firebaseToken.getPicture()
             ));
+
             logger.info("generating token");
             return new ResponseEntity<>(tokenBuilder.getNewToken(
                     firebaseToken.getUid(), firebaseToken.getName(), firebaseToken.getPicture()), HttpStatus.OK);
