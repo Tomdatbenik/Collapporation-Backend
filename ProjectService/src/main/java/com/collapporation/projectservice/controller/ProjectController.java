@@ -129,12 +129,12 @@ public class ProjectController {
         }
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public ResponseEntity deleteProject(@RequestBody Project project)
     {
         log.info("Validating project");
         List<ErrorDto> errors = validateProject(project);
-        log.info("Errors with validating project: " + errors.size());
+
         if(errors == null)
         {
             log.info("Deleting project");
@@ -145,6 +145,7 @@ public class ProjectController {
         }
         else {
             log.warn("Returning errors");
+            log.info("Errors with validating project: " + errors.size());
             return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
         }
     }

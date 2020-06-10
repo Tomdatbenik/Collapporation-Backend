@@ -32,22 +32,22 @@ public class ProjectService {
     }
 
     public void createProject(Project project) {
-        log.info("Sending project into kafka");
+        log.info("Sending project into kafka: " + kafkaTopic);
         dispatcher.dispatch(kafkaTopic, new ProjectCreatedEvent(project));
+        log.info("Project send");
     }
 
     public void update(Project project) {
-        log.info("Updating project, send project into kafka");
+        log.info("Updating project, send project into kafka: " + kafkaTopic);
         dispatcher.dispatch(kafkaTopic, new ProjectUpdateEvent(project));
     }
 
     public void updateStatus(String id, ProjectStatus status) {
-        log.info("Updating status, send project into kafka");
+        log.info("Updating status, send project into kafka: " + kafkaTopic);
         dispatcher.dispatch(kafkaTopic, new ProjectUpdateStatusEvent(id, status));
     }
 
-    public void deleteProject(Project project)
-    {
+    public void deleteProject(Project project) {
         dispatcher.dispatch(kafkaTopic, new ProjectDeleteEvent(project));
     }
 }
