@@ -129,7 +129,7 @@ public class ProjectController {
         }
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping()
     public ResponseEntity deleteProject(@RequestBody Project project)
     {
         log.info("Validating project");
