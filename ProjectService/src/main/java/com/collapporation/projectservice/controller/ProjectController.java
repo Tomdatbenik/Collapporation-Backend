@@ -123,6 +123,26 @@ public class ProjectController {
         }
     }
 
+    @PostMapping("/delete")
+    public ResponseEntity deleteProject(@RequestBody Project project)
+    {
+        log.info("Validating project");
+        List<ErrorDto> errors = validateProject(project);
+        log.info("Errors with validating project: " + errors.size());
+        if(errors == null)
+        {
+            log.info("Deleting project");
+            projectService.deleteProject(project);
+
+            log.info("Returning OK");
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        else {
+            log.warn("Returning errors");
+            return new ResponseEntity(errors ,HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+    }
+
     private List<ErrorDto> validateProject(Project project)
     {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
