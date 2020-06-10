@@ -1,6 +1,7 @@
 package com.collapporation.projectservice.models.dto;
 
 import com.collapporation.projectservice.models.Project;
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,6 +30,8 @@ public class ProjectDTO extends BasicDTO{
     private String links;
     private String collaborators;
     private String comments;
+
+    @JsonRawValue
     private String likes;
     private String follows;
 }
