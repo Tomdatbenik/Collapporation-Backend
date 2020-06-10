@@ -53,6 +53,10 @@ public class ProjectController {
         else
         {
             try{
+
+                log.info("Getting owner by id: " + project.getOwnerId() );
+                projectDTO.setOwner(restTemplate.getForObject("http://user-service/user/" + project.getOwnerId(), String.class));
+                log.info("Received owner by id: " + project.getOwnerId() );
                 log.info("Getting likes by id: " + project.getId() );
                 projectDTO.setLikes(restTemplate.getForObject("http://like-service/like/count?object_id=" + project.getId(), String.class));
                 log.info("Received likes by id: " + project.getId() );
@@ -60,6 +64,7 @@ public class ProjectController {
             catch (Exception ex) {
                 log.error(ex.getMessage());
                 projectDTO.setLikes(null);
+                projectDTO.setOwner("{ name: 'no user could be found' }");
             }
 
             //TODO fill project with tags links comments etc.
