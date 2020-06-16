@@ -45,7 +45,7 @@ script:
  #End of needed copy
   #Copy lines for a new subfolder to build and push dockerfile
  - cd $TRAVIS_BUILD_DIR/LikeService
- - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=likeservice
+ - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=like-service
  - docker build -t docker.io/$DOCKER_NAME/collaporation-likeservice:latest .
  #End of needed copy
 # #Copy lines for a new subfolder to build and push dockerfile
