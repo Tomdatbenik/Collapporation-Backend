@@ -74,7 +74,7 @@ public class ProjectTests
         assertThat(project.getTitle()).isEqualTo(projectDTO.getTitle());
         assertThat(project.getStatus()).isEqualTo(projectDTO.getStatus());
         assertThat(project.getSmallDescription()).isEqualTo(projectDTO.getSmallDescription());
-        assertThat(project.getDescription()).isEqualTo("");
+        assertThat(project.getDescription()).isEqualTo(null);
         assertThat(project.getImg()).isEqualTo(projectDTO.getImg());
         assertThat(project.getCreated()).isEqualTo(projectDTO.getCreated());
         assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwner());
@@ -100,7 +100,7 @@ public class ProjectTests
         assertThat(project.getTitle()).isEqualTo(projectDTO.getTitle());
         assertThat(project.getStatus()).isEqualTo(projectDTO.getStatus());
         assertThat(project.getSmallDescription()).isEqualTo(projectDTO.getSmallDescription());
-        assertThat(project.getDescription()).isEqualTo("");
+        assertThat(project.getDescription()).isEqualTo(null);
         assertThat(project.getImg()).isEqualTo(projectDTO.getImg());
         assertThat(project.getCreated()).isEqualTo(projectDTO.getCreated());
         assertThat(project.getOwnerId()).isEqualTo(projectDTO.getOwner());

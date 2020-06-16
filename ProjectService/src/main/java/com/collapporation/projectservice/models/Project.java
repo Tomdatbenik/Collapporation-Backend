@@ -46,7 +46,7 @@ public class Project
 
     //TODO might give errors
     @JsonProperty("img")
-    @Column(name = "img", columnDefinition = "TEXT")
+    @Column(name = "img", columnDefinition = "LONGTEXT")
     private String img;
 
     @Column(name = "ownerid")
@@ -68,6 +68,5 @@ public class Project
         ownerId = project.getOwner();
         img = project.getImg();
         created = project.getCreated();
-        description = "";
     }
 }

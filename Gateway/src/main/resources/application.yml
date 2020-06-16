@@ -24,3 +24,13 @@ collapporation:
   gateway:
     authfilter:
       matches: (/like-service/.)|(/user-service/.)|(/project-service/.)|(token-service/token/refresh)
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+ribbon:
+  ReadTimeout: 120000
