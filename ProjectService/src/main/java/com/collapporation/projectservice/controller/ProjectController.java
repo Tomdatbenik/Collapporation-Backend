@@ -74,10 +74,11 @@ public class ProjectController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createProject(@RequestBody ProjectDTO projectDto)
+    public ResponseEntity createProject(@RequestBody Project project)
     {
+        //log.info(projectDto);
+        //Project project = new Project(projectDto);
         log.info("Validating project");
-        Project project = new Project(projectDto);
         List<ErrorDto> errors = validateProject(project);
 
         if(errors == null)

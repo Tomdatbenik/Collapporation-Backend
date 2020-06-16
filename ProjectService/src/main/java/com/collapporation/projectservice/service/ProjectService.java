@@ -33,6 +33,7 @@ public class ProjectService {
 
     public void createProject(Project project) {
         log.info("Sending project into kafka: " + kafkaTopic);
+
         dispatcher.dispatch(kafkaTopic, new ProjectCreatedEvent(project));
         log.info("Project send");
     }
