@@ -27,11 +27,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class FeedControllerTest {
-
-    //TODO look into mocking the userservice
-
     @Autowired
-    public FeedService feedService;
+    private FeedService feedService;
 
     private MockMvc mockMvc;
 
@@ -44,7 +41,7 @@ public class FeedControllerTest {
     }
 
     @Test
-    public void getSingleFeedCorrectly() throws Exception {
+    void getSingleFeedCorrectly() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/projectfeed/all?page=0&size=1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
@@ -56,7 +53,7 @@ public class FeedControllerTest {
     }
 
     @Test
-    public void getMultipleFeedCorrectly() throws Exception {
+    void getMultipleFeedCorrectly() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/projectfeed/all?page=0&size=10")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
@@ -68,7 +65,7 @@ public class FeedControllerTest {
     }
 
     @Test
-    public void getFeedIncorrectly() throws Exception {
+    void getFeedIncorrectly() throws Exception {
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/projectfeed/all?page=1&size=10")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))

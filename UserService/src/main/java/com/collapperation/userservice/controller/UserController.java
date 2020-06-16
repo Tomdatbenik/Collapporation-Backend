@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService;
 
-    //TODO Make it so other users can't get private details form other users.
     @GetMapping("/{userId}")
     public ResponseEntity<User> getUser(@PathVariable("userId") String userId) {
         final User user = userService.getUser(userId);

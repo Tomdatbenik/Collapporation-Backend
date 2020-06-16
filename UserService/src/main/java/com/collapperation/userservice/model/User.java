@@ -39,10 +39,5 @@ public class User {
     private String picture;
     @Column(name = "functiontitle")
     private String functionTitle;
-//    private String email;
 }
-//tags
-//links
-//projects
 
-//user -> user name, image, id, role

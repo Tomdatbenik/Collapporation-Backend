@@ -74,9 +74,10 @@ public class ProjectController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createProject(@RequestBody Project project)
+    public ResponseEntity createProject(@RequestBody ProjectDTO projectDto)
     {
         log.info("Validating project");
+        Project project = new Project(projectDto);
         List<ErrorDto> errors = validateProject(project);
 
         if(errors == null)
@@ -108,9 +109,10 @@ public class ProjectController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity updateProject(@RequestBody Project project)
+    public ResponseEntity updateProject(@RequestBody ProjectDTO projectDto)
     {
         log.info("Validating project");
+        Project project = new Project(projectDto);
         List<ErrorDto> errors = validateProject(project);
 
 
@@ -130,9 +132,10 @@ public class ProjectController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity deleteProject(@RequestBody Project project)
+    public ResponseEntity deleteProject(@RequestBody ProjectDTO projectDto)
     {
         log.info("Validating project");
+        Project project = new Project(projectDto);
         List<ErrorDto> errors = validateProject(project);
 
         if(errors == null)
