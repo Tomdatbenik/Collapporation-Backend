@@ -22,7 +22,10 @@ public class FeedController {
 
     @GetMapping("/all")
     public ResponseEntity<List<ProjectFeedDTO>> getProjectfeeds(@Param("page") int page, @Param("size") int size){
+        log.info("received");
         List<ProjectFeedDTO> projectFeed = feedService.getProjectFeed(page, size);
+
+        log.info("returning");
 
         return new ResponseEntity<>(projectFeed, HttpStatus.OK);
     }
