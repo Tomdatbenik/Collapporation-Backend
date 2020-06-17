@@ -34,7 +34,7 @@ public class ProjectFeedDTO extends BasicDTO{
     @JsonProperty("tags")
     private List<Object> tags;
     @JsonProperty("likes")
-    private int likes;
+    private String likes;
     @JsonProperty("follow")
     private boolean follow;
 }

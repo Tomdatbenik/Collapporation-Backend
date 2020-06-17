@@ -36,6 +36,10 @@ public class FeedService {
 //            projectFeedDTO.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
             try{
                 projectFeedDTO.setOwner(restTemplate.getForObject("http://user-service/user/" + p.getOwnerId(), String.class));
+
+                log.info("Getting likes by id: " + projectFeedDTO.getId());
+                projectFeedDTO.setLikes(restTemplate.getForObject("http://like-service/like/count?object_id=" + projectFeedDTO.getId(), String.class));
+                log.info("Received likes by id: " + projectFeedDTO.getId());
             }
             catch (Exception ex) {
                 projectFeedDTO.setOwner("{ name: 'no user could be found' }");
