@@ -2,6 +2,7 @@ package com.collapporation.projectservice.handler.method;
 
 import com.collapporation.projectservice.event.ProjectCreatedEvent;
 import com.collapporation.projectservice.handler.HandlerMethod;
+import com.collapporation.projectservice.models.ProjectStatus;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +20,7 @@ public class CreateProjectEventHandleMethod extends HandlerMethod<ProjectCreated
     @Override
     public void handle(ProjectCreatedEvent event)
     {
+        event.getProject().setStatus(ProjectStatus.CONCEPT);
         projectRepo.save(event.getProject());
     }
 }

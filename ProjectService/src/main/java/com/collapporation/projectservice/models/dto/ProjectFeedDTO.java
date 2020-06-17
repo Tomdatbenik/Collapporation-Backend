@@ -23,7 +23,6 @@ public class ProjectFeedDTO extends BasicDTO{
             img = project.getImg();
             created = project.getCreated();
             tags = new ArrayList<>();
-            likes = 2;
             follow = true;
         }
     }
