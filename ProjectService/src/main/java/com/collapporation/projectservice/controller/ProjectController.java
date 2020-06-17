@@ -118,11 +118,14 @@ public class ProjectController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity updateProject(@RequestBody ProjectDTO projectDto) {
+    public ResponseEntity updateProject(@RequestBody ProjectDTO projectDto, @RequestHeader("Authorization") String token) {
         log.info("Validating project");
         Project project = new Project(projectDto);
-        List<ErrorDto> errors = validateProject(project);
 
+        project.setOwnerId(projectDto.getOwner());
+        project.setDescription(projectDto.getDescription());
+
+        List<ErrorDto> errors = validateProject(project);
 
         if (errors == null) {
             log.info("Updating project");

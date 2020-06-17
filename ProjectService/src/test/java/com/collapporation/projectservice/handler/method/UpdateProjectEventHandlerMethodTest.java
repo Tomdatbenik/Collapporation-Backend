@@ -4,6 +4,7 @@ import com.collapporation.projectservice.event.ProjectUpdateEvent;
 import com.collapporation.projectservice.handler.method.UpdateProjectEventHandleMethod;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.models.dto.ProjectUpdateDTO;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +61,7 @@ public class UpdateProjectEventHandlerMethodTest
 
         final UpdateProjectEventHandleMethod updateProjectEventHandleMethod = new UpdateProjectEventHandleMethod(projectRepo);
 
-        updateProjectEventHandleMethod.handle(new ProjectUpdateEvent(updateProject));
+        updateProjectEventHandleMethod.handle(new ProjectUpdateEvent(new ProjectUpdateDTO(updateProject)));
 
         final Project project = projectRepo.getOne("0");
 

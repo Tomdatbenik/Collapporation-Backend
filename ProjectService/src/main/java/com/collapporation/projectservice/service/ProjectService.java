@@ -7,6 +7,7 @@ import com.collapporation.projectservice.event.ProjectUpdateStatusEvent;
 import com.collapporation.projectservice.kafka.dispatcher.IDispatcher;
 import com.collapporation.projectservice.models.Project;
 import com.collapporation.projectservice.models.ProjectStatus;
+import com.collapporation.projectservice.models.dto.ProjectUpdateDTO;
 import com.collapporation.projectservice.repo.ProjectRepo;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class ProjectService {
 
     public void update(Project project) {
         log.info("Updating project, send project into kafka: " + kafkaTopic);
-        dispatcher.dispatch(kafkaTopic, new ProjectUpdateEvent(project));
+        dispatcher.dispatch(kafkaTopic, new ProjectUpdateEvent(new ProjectUpdateDTO(project)));
     }
 
     public void updateStatus(String id, ProjectStatus status) {
