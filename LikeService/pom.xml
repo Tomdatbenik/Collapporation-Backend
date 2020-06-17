@@ -13,7 +13,7 @@
     <groupId>com.collapporation</groupId>
     <artifactId>like-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>project-service</name>
+    <name>like-service</name>
     <description>like-service</description>
 
     <properties>
