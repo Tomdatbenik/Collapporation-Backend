@@ -28,7 +28,9 @@ public class UpdateProjectEventHandleMethod extends HandlerMethod<ProjectUpdateE
             project.setDescription(event.getProject().getDescription());
             project.setSmallDescription(event.getProject().getSmallDescription());
             project.setImg(event.getProject().getImg());
-
+            if(event.getProject().getStatus() != null){
+                project.setStatus(event.getProject().getStatus());
+            }
 
             log.info("Updating project: " + project.getTitle());
             projectRepo.save(project);
